@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ditto - An introduction</title>
+
+		<meta name="description" content="Mind the Gap - Bridging the frontend/backend divide">
+		<meta name="author" content="Matt Brailsford">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/to.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/obsidian.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<!-- Start -->
+				<section>
+					<h1><img src="img/ditto.png" class="noborder" style="height:200px;" /></h1>
+					<h3><span>An introduction</span></h3>
+					<p><small>By Matt Brailsford / <a href="http://twitter.com/mattbrailsford">@mattbrailsford</a></small></p>
+					<p><a href="http://www.theoutfield.net"><img src="img/theoutfield.png" alt="The Outfield" class="noborder" /></a></p>
+				</section>
+
+				<section >
+					<section>
+						<h2><span>About Me</span></h2>
+						<ul>
+							<li>My name is <a href="http://twitter.com/mattbrailsford">Matt Brailsford</a></li>
+							<li>I work in <a href="http://www.theoutfield.net">The Outfield</a></li>
+							<li>I am Umbraco Level 1 &amp; 2 Certified</a></li>
+							<li>I am a 2 time Umbraco MVP</li>
+							<li>I've released several packages</li>
+							<li>Available for hire</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-background="img/cabin.jpg">
+					<section>
+						<h1><a href="http://codecab.in" target="_blank"><img src="img/cc.png" alt="Code Cabin" style="width:200px;" class="noborder" /></a></h1>
+						<h2 style="color:white;">#codecabin16</h2>
+						<h4 style="color:white;">20 developers, 3 nights, 1 cabin</h4>
+						<h5 style="color:white;">Sept 2nd - 5th 2016</h5>
+					</section>
+				</section>
+
+				<section>
+
+					<section>
+						<h2><span>What is Ditto?</span></h2>
+					</section>
+
+					<section>
+						<h2><span>Ditto is...</span></h2>
+						<p>...an IPublishedContent model mapper for Umbraco</p>
+					</section>
+
+				</section>
+
+				<!--<section>
+
+					<section>
+						<h2><img src="img/ditflo_logo.png" class="noborder" style="width:200px;" /></h2>
+						<h2><span>What is Ditflo?</span></h2>
+					</section>
+
+					<section>
+						<h2><span>Ditflo is...</span></h2>
+						<p>...an automatic strongly typed development workflow using Ditto</p>
+					</section>
+
+				</section>-->
+
+				<section>
+
+					<section>
+						<h2><span>Why use Ditto?</span></h2>
+					</section>
+
+					<section>
+						<h2><span>Because...</span></h2>
+						<ul>
+							<li>Strongly types your models/views</li>
+							<li>Separates logic from views</li>
+							<li>Encapsulates logic in reusable blocks</li>
+							<li>A more granular/flexible approach</li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2><span>How is this different from Models Builder?</span></h2>
+					</section>
+
+					<section>
+						<h2><span>Models Builder = Domain Models</span></h2>
+						<h2><span>Ditto = View Models</span></h2>
+					</section>
+
+					<section>
+						<h2><span>The Model Builders Way</span></h2>
+						<p><img src="img/d1.png" class="noborder" /></p>
+					</section>
+
+					<section>
+						<h2><span>The Ditto Way</span></h2>
+						<p><img src="img/d2.png" class="noborder" /></p>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2><span>Creating Strongly Typed Models<br />With Ditto *</span></h2>
+						<p><small><i>* based on the upcoming v0.9 release</i></small></p>
+					</section>
+
+					<section>
+						<h2><span>Simple Model</span></h2>
+						<small><i>MyModel.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class MyModel { 
+    public string Name { get; set; }
+    public string Url { get; set; }
+}
+					</code></pre>
+					<small><i>MyView.cshtml / MyController.cs</i></small>
+					<pre style="margin-top: 0;"><code data-trim class="cs">
+var myModel = Model.Content.As&lt;MyModel&gt;();
+					</code></pre>
+					</section>
+
+					<section>
+						<h2><span>Attributed Model</span></h2>
+						<small><i>MyModel.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+[UmbracoProperties(Recursive = true)]
+public class MyModel { 
+
+    [UmbracoProperty("heading", "pageName")]
+    public string Name { get; set; }
+
+    public string Url { get; set; }
+
+    [DittoIgnore]
+    public string Ignore { get; set; }
+}
+					</code></pre>
+					<small><i>MyMView.cshtml / MyController.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+var myModel = Model.Content.As&lt;MyModel&gt;();
+					</code></pre>
+					</section>
+
+					<section>
+						<h2><span>Custom Attributes</span></h2>
+						<small><i>HelloAttribute.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class HelloAttribute : DittoProcessorAttribute {
+    public string Name { get; set; }
+    public override object ProcessValue() {
+    	return "Hello " + Name; // Could be any type, from anywhere
+    }
+}
+					</code></pre>
+						<small><i>MyModel.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class MyModel { 
+    [Hello(Name = "Matt")]
+    public string MyString { get; set; }
+}
+					</code></pre>
+					<small><i>MyView.cshtml / MyController.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+var myModel = Model.Content.As&lt;MyModel&gt;();
+					</code></pre>
+					</section>
+
+					<section>
+						<h2><span>Attribute Contexts</span></h2>
+						<small><i>PagedContext.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class PagedContext : DittoProcessorContext {
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+}
+					</code></pre>
+					<div class="fragment">
+					<small><i>NewsAttribute.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+[DittoProcessorMetaData(ValueType = typeof(object), 
+    ContextType = typeof(PagedContext))]
+public class NewsAttribute : DittoProcessorAttribute {
+    public override object ProcessValue() {
+    	var ctx = Context as PagedContext;
+    	return NewsService.GetLatestNews(ctx.Page, ctx.PageSize);
+    }
+}
+					</code></pre>
+</div>
+					<div class="fragment">
+					<small><i>MyModel.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class MyModel { 
+    [News]
+    public IEnumerable&lt;NewsItem&gt; LatestNews { get; set; }
+}
+					</code></pre>
+
+					<small><i>MyView.cshtml / MyController.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+var ctx = new PagedContext { Page = 1, PageSize = 10 };
+var myModel = Model.Content.As&lt;MyModel&gt;(processorContexts:new []{ ctx });
+					</code></pre>
+					</div>
+					</section>
+
+					<section>
+						<h2><span>Chained Attributes</span></h2>
+						<small><i>MyModel.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class MyModel { 
+    [UmbracoProperty("heading", "pageName", Order = 0)]
+    [Uppercase(Order = 1)]
+    public string Name { get; set; }
+}
+					</code></pre>
+					<small><i>MyView.cshtml / MyController.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+var myModel = Model.Content.As&lt;MyModel&gt;();
+					</code></pre>
+					</section>
+
+					<section>
+						<h2><span>Caching</span></h2>
+						<small><i>MyModel.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class MyModel { 
+    [DittoCache(CacheDuration = 300)]
+    [MyComplexData]
+    public IEnumerable&lt;MyComplexData&gt; Data { get; set; }
+}
+					</code></pre>
+					<small><i>MyView.cshtml / MyController.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+var myModel = Model.Content.As&lt;MyModel&gt;();
+foreach(var item in myModel.Data){
+	...
+}
+					</code></pre>
+					</section>
+
+				</section>
+
+
+				<section>
+
+					<section>
+						<h2><span>Creating Strongly Typed Views<br />With Ditto *</span></h2>
+						<p><small><i>* based on the upcoming v0.10 release</i></small></p>
+					</section>
+
+					<section>
+						<h2><span>Simple View</span></h2>
+						<small><i>MyModel.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class MyModel { 
+    public string Name { get; set; }
+    public string Url { get; set; }
+}
+					</code></pre>
+					<small><i>MyView.cshtml</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="html">
+@inherits DittoView&lt;MyModel&gt;
+<h1>@Model.View.Name</h1>
+					</code></pre>
+					</section>
+
+					<section>
+						<h2><span>Contextual View</span></h2>
+						<small><i>NewsPageController.cs</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+public class NewsPageController : DittoController  {
+    public override ActionResult Index(RenderModel model)
+    {
+        // Construct search context
+        var ctx = new PagedContext
+        {
+            Page = int.Parse("0" + Request.QueryString["p"]),
+            PageSize = int.Parse("0" + Request.QueryString["ps"])
+        };
+
+        // Register the context
+        RegisterProcessorContext(ctx);
+
+        // Continue to the page
+        return CurrentView(model);
+    }
+}
+					</code></pre>
+					<small><i>NewsPage.cshtml</i></small>
+						<pre style="margin-top: 0;"><code data-trim class="html">
+@inherits DittoView&lt;MyModel&gt;
+@foreach(var newsItem in Model.View.LatestNews){
+	...
+}
+					</code></pre>
+					</section>
+
+				</section>
+
+				<!--
+				<section>
+
+					<section>
+						<h2><span>Who is using Ditto + Ditflo?</span></h2>
+					</section>
+
+					<section data-background="img/yorkshirecom.jpg">
+						<h2><span>Yorkshire.com</span></h2>
+					</section>
+
+					<section>
+						<h2><span>Carlsberg.com</span></h2>
+					</section>
+
+					<section>
+						<h2><span>The View Model Way</span></h2>
+					</section>
+
+				</section>
+				-->
+
+				<section>
+
+					<section>
+						<h2><span>Useful Links</span></h2>
+						<ul>
+							<li><a href="https://github.com/leekelleher/umbraco-ditto">https://github.com/leekelleher/umbraco-ditto</a></li>
+							<li><a href="https://readthedocs.org/projects/umbraco-ditto/?badge=latest">https://readthedocs.org/projects/umbraco-ditto/</a></li>
+							<li><a href="https://gitter.im/leekelleher/umbraco-ditto">https://gitter.im/leekelleher/umbraco-ditto</a></li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+					<h2><span>Questions?</span></h2>
+				</section>
+
+				<!-- End -->
+				<section>
+					<h1><span>The End</span></h1>
+					<p><small>By Matt Brailsford / <a href="http://twitter.com/mattbrailsford">@mattbrailsford</a></small></p>
+					<p><a href="http://www.theoutfield.net"><img src="img/theoutfield.png" alt="The Outfield" class="noborder" /></a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
