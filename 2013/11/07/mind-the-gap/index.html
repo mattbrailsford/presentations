@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Mind the Gap - Bridging the frontend/backend divide</title>
+
+		<meta name="description" content="Mind the Gap - Bridging the frontend/backend divide">
+		<meta name="author" content="Matt Brailsford">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/mindthegap.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<!-- Start -->
+				<section data-background="img/tracks2.jpg">
+					<h1><span>Mind the Gap</span></h1>
+					<h3>Bridging the frontend/backend divide</h3>
+					<p><small>By Matt Brailsford / <a href="http://twitter.com/mattbrailsford">@mattbrailsford</a></small></p>
+					<p><a href="http://www.theoutfield.net"><img src="img/theoutfield.png" alt="The Outfield" class="noborder" /></a></p>
+				</section>
+
+				<section>
+					<section>
+						<h2><span>About Me</span></h2>
+						<ul>
+							<li>My name is <a href="http://twitter.com/mattbrailsford">Matt Brailsford</a></li>
+							<li>I work in <a href="http://www.theoutfield.net">The Outfield</a></li>
+							<li>I am Umbraco Level 1 &amp; 2 Certified</a></li>
+							<li>I was Umbraco MVP 2011/12</li>
+							<li>I've released a few packages</li>
+						</ul>
+					</section>
+					<section>
+						<h2><span>About Me</span></h2>
+						<ul>
+							<li>Worked in web for over 10 years</a></li>
+							<li>Worked in various sized teams</li>
+							<li>Worked as a freelance developer</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2><span>In this talk</span></h2>
+					<h4><span><a href="#/3">1. The Problem</a></span></h4>
+					<h4><span><a href="#/5">2. Typical Solutions</a></span></h4>
+					<h4><span><a href="#/8">3. Another Way?</a></span></h4>
+					<h4><span><a href="#/18">4. Challenges</a></span></h4>
+					<h4><span><a href="#/19">5. Moving Forward</a></span></h4>
+					<h4><span><a href="#/20">6. Question Time</a></span></h4>
+				</section>
+
+				<section>
+					<h1><span>The Problem</span></h1>
+				</section>
+
+				<section>
+					<section>
+						<h2><span>The Great Divide</span></h2>
+						<h3>Frontend vs Backend</h3>
+					</section>
+
+					<section>
+						<h2><span>Frontenders</span></h2>
+						<ul>
+							<li>HTML</li>
+							<li>Javascript</li>
+							<li>CSS</li>
+							<li>Responsive</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2><span>Backenders</span></h2>
+						<ul>
+							<li>Database</li>
+							<li>Business Logic</li>
+							<li>Content Management</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2><span>The Gap</span></h2>
+						<ul>
+							<li>Content Delivery</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h1><span>Typical Solutions</span></h1>
+				</section>
+
+				<section>
+					<section>
+						<h2><span>Solution 1</span></h2>
+						<h3>The Slice &amp; Dice</h3>
+					</section>
+					<section>
+						<img src="img/d1.png" class="noborder" />
+					</section>
+					<section>
+						<h2><span>The Problem</span></h2>
+						<ul>
+							<li>Once sliced and diced, making changes becomes dificult.</li>
+							<li>Updates require frontend and backend resources.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2><span>Solution 2</span></h2>
+						<h3>Come To The Dark Side</h3>
+					</section>
+					<section>
+						<img src="img/d2.png" class="noborder" />
+					</section>
+					<section>
+						<h2><span>The Problem</span></h2>
+						<ul>
+							<li>Frontender has to learn the specific platform.</li>
+							<li>Without in depth knowledge of the server technology, it's easy to create performance issues.</li>
+							<li>With great power, comes great responsibility.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h1><span>Another Way?</span></h1>
+				</section>
+
+				<section>
+					<section>
+						<h2><span>Requirements</span></h2>
+					</section>
+					<section>
+						<h2><span>Front End</span></h2>
+						<ul>
+							<li>Simple to learn</li>
+							<li>System agnostic</li>
+							<li>Need to know basis</li>
+							<li>Standalone development</li>
+						</ul>
+					</section>
+					<section>
+						<h2><span>Back End</span></h2>
+						<ul>
+							<li>No HTML manipulation</li>
+							<li>No manual code conversion</li>
+							<li>Deliver the content</li>
+						</ul>
+					</section>
+					<section>
+						<h2><span>Shared</span></h2>
+						<ul>
+							<li>Data structure</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<img src="img/d3b.png" class="noborder" />
+					<aside class="notes">
+						<ul>
+							<li>Why is it so dificult?</li>
+							<li>Backend pretty easy</li>
+							<li>How do I as a front end dev, create a dynamic site standalone</li>
+						</ul>
+					</aside>
+				</section>
+
+				<!--
+				<section>
+					<h2><span>Tangent</span></h2>
+					<aside class="notes">
+						<ul>
+							<li>Worked on v5</li>
+							<li>Played with DotLiquid</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2><span>#CG13</span></h2>
+					<p><a href="http://stream.umbraco.org/video/8317157/liv-madsen-meet-me-in-the-browser" target="_blank">Meet me in the Browser</a> / <a href="http://twitter.com/livmadsen" target="_blank">@livmadsen</a></p>
+				</section>
+				-->
+
+				<section>
+					<section>
+						<!--<h3>Frontend</h3>-->
+						<h2><span>Mixture</span></h2>
+						<h3><a href="http://mixture.io">http://mixture.io</a></h3>
+						<p><small>By <a href="twitter.com/teammixture">@teammixture</a></small></p>
+					</section>
+
+					<section>
+						<h2><span>Tangent</span></h2>
+						<p><a href="http://stream.umbraco.org/video/8317157/liv-madsen-meet-me-in-the-browser" target="_blank">Meet me in the Browser</a> / <a href="http://twitter.com/livmadsen" target="_blank">@livmadsen</a></p>
+					</section>
+
+					<section>
+						<h2><span>Mixture</span></h2>
+						<table>
+							<tr>
+								<td>
+									<ul>
+										<li>Cross platform.</li>
+										<li>Built in web-server.</li>
+										<li>Built in preprocessing.</li>
+										<li>Multi-device testing.</li>
+										<li>Rapid prototyping.</li>
+									</ul>
+								</td>
+								<td><img src="img/mixture2.png" class="noborder" /></td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h2><span>Liquid</span></h2>
+						<table>
+							<tr>
+								<td>
+									<ul>
+										<li>Template language.</li>
+										<li>Created by Shopify.</li>
+										<li>Simple syntax.</li>
+										<li>Very restrictive.</li>
+									</ul>
+								</td>
+								<td><pre><code data-trim contenteditable>
+{% layout "main" %}
+
+{% if user %}
+  Hello {{ user.name }}
+{% endif %}
+
+{% for item in array %}
+  {{ item }}
+{% endfor %}
+					</code></pre></td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h2><span>JSON</span></h2>
+						<table>
+							<tr>
+								<td>
+									<ul>
+										<li>Simple data format.</li>
+										<li>Easy to understand.</li>
+										<li>Easy to edit.</li>
+									</ul>
+								</td>
+								<td><pre><code data-trim contenteditable>
+{
+  "title": "About us",
+  "team": [
+    {
+      "name": "Neil Kinnish",
+      "twitter": "neiltak"
+    },
+    {
+      "name": "Pete Nelson",
+      "twitter": "petetak"
+    }
+  ]
+}
+					</code></pre></td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h2><span>Demo</span></h2>
+				</section>
+
+				<section>
+					<section>
+						<h2><span>DotLiquid</span></h2>
+						<h3><a href="http://dotliquidmarkup.org/">http://dotliquidmarkup.org</a></h3>
+						<p><small>By <a href="http://timjones.tw/">Tim Jones</a></small></p>
+					</section>
+					<section>
+						<h2><span>DotLiquid</span></h2>
+						<ul>
+							<li>.NET port of the Liquid templating language</li>
+							<li>Available as an MVC view engine</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2><span>Demo</span></h2>
+				</section>
+
+				<section>
+					<section>
+						<h2><span>Bridging the Gap</span></h2>
+						<ul>
+							<li>The Data</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2><span>Demo</span></h2>
+				</section>
+
+				<section>
+					<h2><span>Mixture + Liquid + JSON</span></h2>
+					<h3>+</h3>
+					<h2><span>Umbraco + MVC + DotLiquid</span></h2>
+					<h3>=</h3>
+					<h2><span>The Answer?</span></h2>
+				</section>
+
+				<section>
+
+					<section>
+						<h1><span>Challenges</span></h1>
+					</section>
+
+					<section>
+						<h2><span>Limitations</span></h2>
+						<ul>
+							<li>Can't use all Mixture.io features</li>
+							<li>Can't handle Umbraco SurfaceController forms</li>
+							<li>Umbraco expects views to be Razor (.cshtml)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2><span>Skillset Changes</span></h2>
+						<ul>
+							<li>Frontenders to take on more responsibility</li>
+							<li>Backenders to relinquish some responsibility</li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+					<h1><span>Moving Forward</span></h1>
+				</section>
+
+				<section>
+					<h1><span>Question Time</span></h1>
+				</section>
+
+				<!-- End -->
+				<section data-background="img/tracks2.jpg">
+					<h1><span>End of the Line</span></h1>
+					<p><small>By Matt Brailsford / <a href="http://twitter.com/mattbrailsford">@mattbrailsford</a></small></p>
+					<p><a href="http://www.theoutfield.net"><img src="img/theoutfield.png" alt="The Outfield" class="noborder" /></a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
