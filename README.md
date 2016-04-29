@@ -1,6 +1,6 @@
 # My Umbraco Presentations
 
-* [2016-04-27] [umbLeeds - Ditto - Introduction](http://mattbrailsford.github.io/umbraco-presentations/2016/04/27/ditto-introduction/index.html) ([Src](/mattbrailsford/umbraco-presentations/tree/gh-pages/2016/04/27/ditto-introduction))
+* [2016-04-27] [umbLeeds - Ditto - Introduction](http://mattbrailsford.github.io/umbraco-presentations/2016/04/27/ditto-introduction/index.html) ([Src](../gh-pages/2016/04/27/ditto-introduction))
 
 ### License
 
