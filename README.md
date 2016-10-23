@@ -5,6 +5,7 @@
 * [2014-05-21] [Manchester Umbraco Meetup - Thinking Angular - An intro to Angular JS in Umbraco 7](http://mattbrailsford.github.io/umbraco-presentations/2014/05/21/thinking-angular/index.html) ([Src](../gh-pages/2014/05/21/thinking-angular))
 * [2015-06-11] Codegaren 15 - How To Develop A Killer Package ([Src](https://github.com/leekelleher/umbraco-talks/tree/master/CG15))
 * [2016-04-27] [Leeds Umbraco Meetup - Ditto - Introduction](http://mattbrailsford.github.io/umbraco-presentations/2016/04/27/ditto-introduction/index.html) ([Src](../gh-pages/2016/04/27/ditto-introduction))
+* [2016-10-23] [UI-O-Matic - Version 2.0](http://mattbrailsford.github.io/umbraco-presentations/2016/10/23/ui-o-matic-v2/index.html) ([Src](../gh-pages/2016/10/23/ui-o-matic-v2))
 
 ### License
 
