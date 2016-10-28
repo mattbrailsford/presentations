@@ -215,9 +215,9 @@ public class Route {
 					<section>
 						<h3>The Poco</h3>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMatic("routes", "Routes", "Route", "icon-directions", "icon-directions")]
-[TableName("routes")]
-public class Route { 
+[UIOMatic("people", "People", "Person", "icon-users", "icon-user")]
+[TableName("people")]
+public class Person { 
     ...
     [UIOMaticField(Name = "Picture", Description = "Select a picture", View = "file")]
     [UIOMaticListViewField(Name = "Picture", View = "image")]
@@ -229,6 +229,58 @@ public class Route {
 					<section>
 						<h3>The UI</h3>
 						<img src="img/lvv.jpg" alt="List View Field Views" class="plain">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>List Actions</h2>
+					</section>
+					<section>
+						<h3>The Poco's</h3>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+[UIOMaticAction("import", "Import", "~/path/to/import.dialog.html")]
+public class ImportAction { }
+
+[UIOMatic("routes", "Routes", "Route", "icon-directions", "icon-directions", 
+    ListViewActions = new[]{ typeof(ImportAction) })]
+[TableName("routes")]
+public class Route { 
+    ...
+}
+					</code></pre>
+					</section>
+					<section>
+						<h3>The UI</h3>
+						<img src="img/actions.png" alt="List View Actions" class="plain">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Summary Dashboard</h2>
+					</section>
+					<section>
+						<h3>The Poco's</h3>
+						<pre style="margin-top: 0;"><code data-trim class="cs">
+[UIOMatic("towns", "Towns", "Town", "icon-library", "icon-library", 
+    ShowOnSummaryDashboard = true)]
+[TableName("towns")]
+public class Town { 
+    ...
+}
+
+[UIOMatic("people", "People", "Person", "icon-users", "icon-user", 
+    ShowOnSummaryDashboard = true)]
+[TableName("people")]
+public class Person { 
+    ...
+}
+					</code></pre>
+					</section>
+					<section>
+						<h3>The UI</h3>
+						<img src="img/dashboard.png" alt="Summary Dashboard" class="plain">
 					</section>
 				</section>
 
@@ -297,8 +349,7 @@ public class Route {
 					<section>
 						<h2>Other Stuff</h2>
 						<ul>
-							<li class="fragment fade-up">Tree syncing</li>
-							<li class="fragment fade-up">Tree list view icon</li>
+							<li class="fragment fade-up">UI Tweaks</li>
 							<li class="fragment fade-up">Label formatting</li>
 							<li class="fragment fade-up">DateTimeUtc field</li>
 							<li class="fragment fade-up">List field return URL</li>
