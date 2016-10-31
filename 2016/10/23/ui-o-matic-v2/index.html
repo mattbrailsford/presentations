@@ -72,7 +72,7 @@
 						<h3>in other words</h3>
 						<p>it can take this...</p>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMatic("people", "People", "Person", "icon-users", "icon-user")]
+[UIOMatic("people", "People", "Person", FolderIcon = "icon-users", ItemIcon = "icon-user")]
 [TableName("people")]
 public class Person { 
 
@@ -141,7 +141,8 @@ public class Person {
 					<section>
 						<h3>The Poco</h3>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMatic("markers", "Markers", "Marker", "icon-pin-location", "icon-pin-location")]
+[UIOMatic("markers", "Markers", "Marker", 
+    FolderIcon = "icon-pin-location", ItemIcon = "icon-pin-location")]
 [TableName("markers")]
 public class Marker { 
 	...
@@ -166,11 +167,12 @@ public class Marker {
 					<section>
 						<h3>The Poco's</h3>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMaticFolder("mapping", "Mapping", "icon-pin-location")]
+[UIOMaticFolder("mapping", "Mapping", FolderIcon = "icon-pin-location")]
 public class MappingFolder
 { }
 
-[UIOMatic("markers", "Markers", "Marker", "icon-pin-location", "icon-pin-location",
+[UIOMatic("markers", "Markers", "Marker", 
+    FolderIcon = "icon-pin-location", ItemIcon = "icon-pin-location",
     ParentAlias = "mapping")]
 [TableName("markers")]
 public class Marker { 
@@ -191,7 +193,8 @@ public class Marker {
 					<section>
 						<h3>The Poco</h3>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMatic("routes", "Routes", "Route", "icon-directions", "icon-directions")]
+[UIOMatic("routes", "Routes", "Route", 
+    FolderIcon = "icon-directions", ItemIcon = "icon-directions")]
 [TableName("routes")]
 public class Route { 
     ...
@@ -215,7 +218,8 @@ public class Route {
 					<section>
 						<h3>The Poco</h3>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMatic("people", "People", "Person", "icon-users", "icon-user")]
+[UIOMatic("people", "People", "Person", 
+    FolderIcon = "icon-users", ItemIcon = "icon-user")]
 [TableName("people")]
 public class Person { 
     ...
@@ -242,7 +246,8 @@ public class Person {
 [UIOMaticAction("import", "Import", "~/path/to/import.dialog.html")]
 public class ImportAction { }
 
-[UIOMatic("routes", "Routes", "Route", "icon-directions", "icon-directions", 
+[UIOMatic("routes", "Routes", "Route", 
+    FolderIcon = "icon-directions", ItemIcon = "icon-directions", 
     ListViewActions = new[]{ typeof(ImportAction) })]
 [TableName("routes")]
 public class Route { 
@@ -263,14 +268,16 @@ public class Route {
 					<section>
 						<h3>The Poco's</h3>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMatic("towns", "Towns", "Town", "icon-library", "icon-library", 
+[UIOMatic("towns", "Towns", "Town", 
+    FolderIcon = "icon-library", ItemIcon = "icon-library", 
     ShowOnSummaryDashboard = true)]
 [TableName("towns")]
 public class Town { 
     ...
 }
 
-[UIOMatic("people", "People", "Person", "icon-users", "icon-user", 
+[UIOMatic("people", "People", "Person", 
+    FolderIcon = "icon-users", ItemIcon = "icon-user", 
     ShowOnSummaryDashboard = true)]
 [TableName("people")]
 public class Person { 
@@ -307,6 +314,8 @@ public interface IUIOMaticRepository
     object Update(object entity);
 
     void Delete(string[] id);
+
+    long GetTotalRecordCount();
 }
 					</code></pre>
 					</section>
@@ -329,14 +338,17 @@ public abstract class AbstractUIOMaticRepository&lt;TEntity, TId&gt; : IUIOMatic
     public abstract TEntity Update(TEntity entity);
 
     public abstract void Delete(TId[] ids);
+
+    long GetTotalRecordCount();
 }
 					</code></pre>
 					</section>
 					<section>
 						<h3>The Poco</h3>
 						<pre style="margin-top: 0;"><code data-trim class="cs">
-[UIOMatic("routes", "Routes", "Route", "icon-directions", "icon-directions",
-   RepositoryType = typeof(MyRepository))]
+[UIOMatic("routes", "Routes", "Route", 
+    FolderIcon = "icon-directions", ItemIcon = "icon-directions",
+    RepositoryType = typeof(MyRepository))]
 [TableName("routes")]
 public class Route { 
     ...
