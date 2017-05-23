@@ -1,0 +1,958 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Progressive Web Apps - App development for the rest of us</title>
+
+        <meta name="author" content="Matt Brailsford">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/to.css">
+        <link rel="stylesheet" href="lib/css/to-dark.css">
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+
+        <a id="logo" href="http://outfield.digital" target="_blank">
+            <svg role="img" id="" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/logo.svg#leaf"></use>
+            </svg>
+        </a>
+
+        <div class="reveal">
+            <div class="slides">
+
+            <!-- SPLASH -->
+                <section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>PROGRESSIVE</div>
+                                <div>WEB APPS</div>
+                                <div class="green">APP DEVELOPMENT FOR THE REST OF US</div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- ME -->
+                <section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Matt Brailsford</div>
+                                <div class="green">Outfield Digital &mdash; @mattbrailsford</div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- INTRO -->
+                <section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Being a web developer is</div>
+                                <div class="white">hard</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="green">App development is</div>
+                                <div>scary</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Progressive</div>
+                                <div>Web Apps</div>
+                                <div class="green fragment">also known as a pwa</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- TOC -->
+                <section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>To Come</div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- WHAT IS A PWA -->
+                <section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>What exactly is a</div>
+                                <div class="white">Progressive</div>
+                                <div class="white">Web App?</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>"A <span class="green">Progressive Web App</span></div>
+                                <div>uses <span class="green">modern web capabilities</span> to deliver</div>
+                                <div> an <span class="green">app-like user experience</span>"</div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- THE 10 COMMANDEMENTS -->
+                <section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>The Ten</div>
+                                <div class="white">Commandments</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Progressive <span class="green fragment"> Responsive</span></div>
+                                <div><span class="fragment">Connectivity Independant</span></div>
+                                <div><span class="green fragment">App Like</span> <span class="fragment"> Fresh</span> <span class="green fragment"> Safe</span></div>
+                                <div><span class="fragment">Disoverable</span> <span class="green fragment"> Re-engageable</span></div>
+                                <div><span class="green fragment">Installable</span> <span class="fragment"> Linkable</span></div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- KEY TECHNOLOGIES -->
+                <section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Key Technologies</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>HTML/CSS/JS <span class="green fragment"> Web App Manifest</span></div>
+                                <div><span class="green fragment">Service Workers</span></div>
+                                <div><span class=" fragment">HTTPS</span><span class="green fragment"> Add to Homescreen</span></div>
+                                <div><span class="fragment">Push Notifications</span> </div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- DEMO -->
+                <section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Demo Time</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <!--
+                    <section>
+                        <div class="content-wrapper">
+                            <video style="width:30%;" loop>
+                                <source src="vid/screencapture-1495528845198.mp4">
+                                <source src="vid/screencapture-1495528845198.webm">
+                            </video>
+                        </div><div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Codecabin</div>
+                            </h1>
+                        </div>
+                    </section>
+                    -->
+                </section>
+
+                <!-- HTML/CSS/JS -->
+                <section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">HTML/CSS/JS</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">App Shell</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                          <img src="img/app-shell.png" alt="App Shell" />
+                        </div>
+                    </section>
+
+                    <!--
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="green">What needs to be</div>
+                                <div>on screen immediately?</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="green">What other UI components</div>
+                                <div>are key to your app?</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="green">What supporting reousources</div>
+                                <div>are needed for the</div>
+                                <div>app shell?</div>
+                            </h1>
+                        </div>
+                    </section>
+                    -->
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Demo Time</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>So to recap...</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- WEB APP MANIFEST -->
+                <section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Web App Manifest</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="json">{
+  "name": "MyApp",
+  "short_name": "MyApp",
+  "icons": [
+      {
+          "src": "/images/myapp-256.png",
+          "sizes": "256x256",
+          "type": "image/png"
+      },
+      ...
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#BADA55",
+  "theme_color": "#BADA55"
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="html"><link rel="manifest" href="/manifest.json"></code></pre>
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- SERVICE WORKERS -->
+                <section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Service Workers</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>"A <span class="green">service worker</span> is a JS script</div>
+                                <div>that <span class="green">runs in a background thread</span>,</div>
+                                <div>and <span class="green">acts as a proxy</span></div>
+                                <div>to all your <span class="green">network requests</span>"</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Caching</div>
+                                <div class="green fragment">Push Notification Handling*</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Pre Caching</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="js">self.addEventListener('install', function(e) {
+  e.waitUntil(
+    caches.open('mycache01').then(function(cache) {
+      return cache.addAll([
+          '/',
+          '/index.html',
+          '/manifest.json',
+          '/css/app.css',
+          '/js/app.js',
+        ])
+        .then(function() { self.skipWaiting(); });
+    })
+  );
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Request Caching</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="js">self.addEventListener('fetch', function(e) {
+  e.respondWith(
+    caches.open('mycache01').then(function(cache) {
+      return fetch(e.request).then(function(response) {
+        cache.put(e.request.url, response.clone());
+        return response;
+      });
+    })
+  );
+});</code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Cache Invalidation</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="js">self.addEventListener('activate', function(e) {
+  e.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (key !== 'mycache01') {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
+});</code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Service Worker</div>
+                                <div class="white">Registration</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                          <pre><code class="html">&lt;script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(function() { 
+        console.log('service worker registered'); 
+      });
+  }
+&lt;/script></code></pre>
+                        </div>
+                    </section>
+
+                    <!--
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>More On</div>
+                                <div class="green">Request Caching</div>
+                            </h1>
+                        </div>
+                    </section>
+                    -->
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/workbox.png" alt="Workbox">
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                          <pre><code class="js">importScripts('/path/to/workbox-sw.js');
+
+const workboxSW = new WorkboxSW({ 
+  clientsClaim: true, 
+  skipWaiting: true 
+});
+
+// Insert caching rules here</code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Pre Caching</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                          <pre><code class="js">workboxSW.precache([
+  {
+    url: '/index.html',
+    revision: '613e6c7332dd83e848a8b00c403827ed'
+  },
+  {
+    url: '/styles/main.css',
+    revision: '59a325f32baad11bd47a8c515ec44ae5'
+  }
+]);</code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Request Caching</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                          <pre><code class="js">workboxSW.router.registerRoute('/resource/path/',
+  workboxSW.strategies.cacheFirst({
+    cacheName: 'my-resource-cache',
+    cacheExpiration: {
+      maxEntries: 10,
+      maxAgeSeconds: 7 * 24 * 60 * 60
+    }
+  })
+);</code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Request Caching</div>
+                                <div class="white">Strategies</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h4>Network Only</h4>
+                            <img src="img/cs-network-only.png" alt="Network Only" />
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h4>Cache Only</h4>
+                            <img src="img/cs-cache-only.png" alt="Network Only" />
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h4>Cache First</h4>
+                            <img src="img/cs-cache-first.png" alt="Cache First" />
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h4>Network First</h4>
+                            <img src="img/cs-network-first.png" alt="Network First" style="margin-top: -20px;" />
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h4>Stale While Revalidate</h4>
+                            <img src="img/cs-cache-network.png" alt="tale While Revalidate" style="margin-top: -10px;"  />
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Demo Time</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>So to recap...</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- HTTPS -->
+                <section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">HTTPS</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/lets-encrypt.png" alt="Lets Encrypt">
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- ADD TO HOMESCREEN BANNER -->
+                <section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Add to Homescreen</div>
+                                <div class="white">Banner</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/add-to-homescreen.png" alt="Add to Homescreen">
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- PUSH NOTIFICATIONS -->
+                <section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Push Notifications</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/push-notification2.png" alt="Push Notification">
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                          <pre><code class="html hl-1">&lt;script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(function(sw) { 
+         window.sw = sw;
+      });
+  }
+&lt;/script></code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Subscribing</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="js">window.sw.pushManager.subscribe()  
+  .then(function(s) {  
+    // Subscription successful
+    updateSubscriptionUI(true);
+    registerSubscriptionOnServer(s.endpoint);
+  });</code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/push-notification.png" alt="Subscribe to Push Notifications">
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Unsubscribing</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="js">window.sw.pushManager.getSubscription()  
+  .then(function(s) {  
+    s.unsubscribe().then(function(){
+      // Unsubscribed
+      updateSubscriptionUI(false);
+      unRegisterSubscriptionOnServer(s.endpoint);
+    });
+  });</code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Push Notification</div>
+                                <div class="white">Handling</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="js">self.addEventListener('push', function(e) { 
+  e.waitUntil(  
+    self.registration
+      .showNotification('Yay a message!', {  
+        body: 'We have received a push message.',  
+        icon: '/images/icon-192x192.png',  
+        tag: 'my-app'  
+      })  
+  ); 
+});</code></pre>
+                      </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/push-notification2.png" alt="Push Notification">
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Push Notification</div>
+                                <div class="white">Click Handling</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="js">self.addEventListener('notificationclick', function(e) {  
+  e.notification.close();
+  e.waitUntil(
+    clients.matchAll({ type: "window" })
+      .then(function(clientList) {  
+        clientList.forEach(function (client) {
+          if (client.url == '/') {
+            return client.focus();  
+          }
+        }); 
+        return clients.openWindow('/');  
+      })
+  );
+});</code></pre>
+                      </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Sending</div>
+                                <div class="white">Push Notification</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/firebase.png" alt="Firebase" />
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="bash">curl --header "Authorization: key={YOUR_SERVER_KEY}" 
+  --header "Content-Type: application/json" 
+  https://android.googleapis.com/gcm/send 
+  -d "{\"registration_ids\":[\"{YOUR_SUBSCRIPTION_IDS}\"]}"</code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <pre><code class="json">{
+  ...
+  "gcm_sender_id": "{YOUR_SENDER_ID}"
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/push-notification2.png" alt="Push Notification">
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Demo Time</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>So to recap...</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- WHEN -->
+                <section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>When can we</div>
+                                <div class="white">use them?</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Today!</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <img src="img/browser-support.png" alt="Browser Support" />
+                        </div>
+                    </section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <img src="img/apple.png" alt="Apple" />
+                        </div>
+                    </section>
+                    <section>
+                      <div class="content-wrapper">
+                        <img src="img/pwa-examples.png" alt="PWA Examples" />
+                      </div>
+                      <aside class="notes">
+                        <p>
+                          <strong>Twitter</strong><br />
+                          65% pages per session, 75% tweet increase, 20% decrease in bounce rate
+                        </p>
+                        <p>
+                          <strong>Lyft</strong><br />
+
+                        </p>
+                        <p>
+                          <strong>Flipkart</strong><br />
+                          3x more time on site, 3x lower data usage, 40% re-engagement, 70% conversion
+                        </p>
+                      </aside>
+                    </section>
+                    <section data-background="img/pwa-logos2.jpg">
+                      <aside class="notes">
+                        Big in india
+                        Low bandwidth deman
+                      </aside>
+                    </section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Things can only</div>
+                                <div class="white">get better</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Audio/Video Capture <span class="green fragment"> Speech Recognition</span></div>
+                                <div><span class="fragment">Bluetooth</span> <span class="green fragment"> NFC</span></div>
+                                <div><span class="green fragment">Geo-location</span> <span class="fragment"> Vibration</span></div>
+                                <div><span class="fragment">Battery Status</span> <span class="green fragment"> File Access</span></div>
+                                <div><span class="green fragment">Contact Access</span> <span class="fragment"> More...</span></div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">PWAS FTW!</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- THANK YOU -->
+                <section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>Thank You</div>
+                                <div class="green">Outfield Digital &mdash; @mattbrailsford</div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bigtext.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                autoPlayMedia: true,
+
+                width: 1024,
+                height: 576,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                keyboard: {
+                    27: "Fullscreen"
+                },
+
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+
+            });
+
+            var beforeSlide = function(cs) {
+                var $cs = $(cs);
+                var bg = $cs.data("background");
+                if (bg === "#22bd7a"){
+                    $(".reveal").addClass("has-link-color-background");
+                } else {
+                    $(".reveal").removeClass("has-link-color-background");
+                }
+                $cs.find(".bigtext").bigtext();
+                Reveal.layout();
+            }
+
+            Reveal.addEventListener( 'ready', function( event ) {
+                beforeSlide(event.currentSlide);
+            });
+
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                beforeSlide(event.currentSlide);
+            });
+
+        </script>
+    </body>
+</html>
