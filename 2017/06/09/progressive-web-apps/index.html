@@ -50,7 +50,7 @@
                         <div class="content-wrapper">
                             <h1 class="bigtext">
                                 <div>Matt Brailsford</div>
-                                <div class="green">Outfield Digital &mdash; @mattbrailsford</div>
+                                <div class="green">@mattbrailsford &mdash; Outfield Digital</div>
                             </h1>
                         </div>
                     </section>
@@ -82,7 +82,7 @@
                             <h1 class="bigtext">
                                 <div>Progressive</div>
                                 <div>Web Apps</div>
-                                <div class="green fragment">also known as a pwa</div>
+                                <div class="green">also known as a pwa</div>
                             </h1>
                         </div>
                     </section>
@@ -123,6 +123,7 @@
                 </section>
 
                 <!-- THE 10 COMMANDEMENTS -->
+                <!--
                 <section>
                     <section data-background="#22bd7a">
                         <div class="content-wrapper">
@@ -140,6 +141,40 @@
                                 <div><span class="green fragment">App Like</span> <span class="fragment"> Fresh</span> <span class="green fragment"> Safe</span></div>
                                 <div><span class="fragment">Disoverable</span> <span class="green fragment"> Re-engageable</span></div>
                                 <div><span class="green fragment">Installable</span> <span class="fragment"> Linkable</span></div>
+                            </h1>
+                        </div>
+                    </section>
+                </section>
+                -->
+
+                <!-- DEMO -->
+                <section>
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Demo Time</div>
+                            </h1>
+                        </div>
+                    </section>
+                    <section data-background="img/codecabin_group_jump_dark.jpg">
+                        <div class="content-wrapper">
+                            <img src="img/cc-logo.png" style="width:250px;" /><br />
+                            <h4 style="background-color: #9068be; display: inline-block;padding: 5px 15px;font-weight: 400;font-size:30px;">The Umbraco Developer Unconference</h4>
+                            <h6 style="font-weight:400;font-size: 30px;">codecab.in | 8th  11th Sept 2017</h6>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <video style="width:25%;" loop>
+                                <source src="vid/demo.mp4">
+                                <source src="vid/demo.webm">
+                            </video>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="">app.codecab.in</div>
                             </h1>
                         </div>
                     </section>
@@ -164,31 +199,6 @@
                             </h1>
                         </div>
                     </section>
-                </section>
-
-                <!-- DEMO -->
-                <section>
-                    <section data-background="#22bd7a">
-                        <div class="content-wrapper">
-                            <h1 class="bigtext">
-                                <div class="white">Demo Time</div>
-                            </h1>
-                        </div>
-                    </section>
-                    <!--
-                    <section>
-                        <div class="content-wrapper">
-                            <video style="width:30%;" loop>
-                                <source src="vid/screencapture-1495528845198.mp4">
-                                <source src="vid/screencapture-1495528845198.webm">
-                            </video>
-                        </div><div class="content-wrapper">
-                            <h1 class="bigtext">
-                                <div class="white">Codecabin</div>
-                            </h1>
-                        </div>
-                    </section>
-                    -->
                 </section>
 
                 <!-- HTML/CSS/JS -->
@@ -302,6 +312,22 @@
                         </div>
                     </section>
 
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Demo Time</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div>So to recap...</div>
+                            </h1>
+                        </div>
+                    </section>
+
                 </section>
 
                 <!-- SERVICE WORKERS -->
@@ -335,6 +361,7 @@
                         </div>
                     </section>
 
+<!--
                     <section data-background="#22bd7a">
                         <div class="content-wrapper">
                             <h1 class="bigtext">
@@ -409,30 +436,7 @@
 });</code></pre>
                         </div>
                     </section>
-
-                    <section data-background="#22bd7a">
-                        <div class="content-wrapper">
-                            <h1 class="bigtext">
-                                <div class="white">Service Worker</div>
-                                <div class="white">Registration</div>
-                            </h1>
-                        </div>
-                    </section>
-
-                    <section>
-                        <div class="content-wrapper">
-                          <pre><code class="html">&lt;script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('/service-worker.js')
-      .then(function() { 
-        console.log('service worker registered'); 
-      });
-  }
-&lt;/script></code></pre>
-                        </div>
-                    </section>
-
+-->
                     <!--
                     <section>
                         <div class="content-wrapper">
@@ -549,6 +553,29 @@ const workboxSW = new WorkboxSW({
                         <div class="content-wrapper">
                             <h4>Stale While Revalidate</h4>
                             <img src="img/cs-cache-network.png" alt="tale While Revalidate" style="margin-top: -10px;"  />
+                        </div>
+                    </section>
+
+                    <section data-background="#22bd7a">
+                        <div class="content-wrapper">
+                            <h1 class="bigtext">
+                                <div class="white">Service Worker</div>
+                                <div class="white">Registration</div>
+                            </h1>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="content-wrapper">
+                          <pre><code class="html">&lt;script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(function() { 
+        console.log('service worker registered'); 
+      });
+  }
+&lt;/script></code></pre>
                         </div>
                     </section>
 
@@ -839,7 +866,7 @@ const workboxSW = new WorkboxSW({
                         </p>
                         <p>
                           <strong>Lyft</strong><br />
-
+                          Emerging markets
                         </p>
                         <p>
                           <strong>Flipkart</strong><br />
@@ -864,11 +891,11 @@ const workboxSW = new WorkboxSW({
                     <section>
                         <div class="content-wrapper">
                             <h1 class="bigtext">
-                                <div>Audio/Video Capture <span class="green fragment"> Speech Recognition</span></div>
-                                <div><span class="fragment">Bluetooth</span> <span class="green fragment"> NFC</span></div>
-                                <div><span class="green fragment">Geo-location</span> <span class="fragment"> Vibration</span></div>
-                                <div><span class="fragment">Battery Status</span> <span class="green fragment"> File Access</span></div>
-                                <div><span class="green fragment">Contact Access</span> <span class="fragment"> More...</span></div>
+                                <div>Audio/Video Capture <span class="green"> Speech Recognition</span></div>
+                                <div><span class="">Bluetooth</span> <span class="green"> NFC</span></div>
+                                <div><span class="green">Geo-location</span> <span class=""> Vibration</span></div>
+                                <div><span class="">Battery Status</span> <span class="green"> File Access</span></div>
+                                <div><span class="green">Contact Access</span> <span class=""> More...</span></div>
                             </h1>
                         </div>
                     </section>
@@ -888,7 +915,7 @@ const workboxSW = new WorkboxSW({
                         <div class="content-wrapper">
                             <h1 class="bigtext">
                                 <div>Thank You</div>
-                                <div class="green">Outfield Digital &mdash; @mattbrailsford</div>
+                                <div class="green">@mattbrailsford &mdash; Outfield Digital</div>
                             </h1>
                         </div>
                     </section>
