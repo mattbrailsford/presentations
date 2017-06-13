@@ -8,6 +8,7 @@
 * [2016-04-27] [Leeds Umbraco Meetup - Ditto - Introduction](http://mattbrailsford.github.io/umbraco-presentations/2016/04/27/ditto-introduction/index.html) ([Src](../gh-pages/2016/04/27/ditto-introduction))
 * [2016-10-23] [UI-O-Matic - Version 2.0](http://mattbrailsford.github.io/umbraco-presentations/2016/10/23/ui-o-matic-v2/index.html) ([Src](../gh-pages/2016/10/23/ui-o-matic-v2))
 * [2016-11-19] [Manchester Umbraco Meetup - Code Cabin - The Umbraco Developer Unconference](http://mattbrailsford.github.io/umbraco-presentations/2016/11/19/codecabin/index.html) ([Src](../gh-pages/2016/11/19/codecabin))
+* [2017-06-09] [Codegarden 2017 - Progressive Web Apps - App Development for the Rest of Us](http://mattbrailsford.github.io/umbraco-presentations/2017/06/09/progressive-web-apps/index.html) ([Src](../gh-pages/2017/06/09/progressive-web-apps))
 
 ### License
 
