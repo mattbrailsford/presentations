@@ -1,0 +1,1438 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Getting Airborne with Tailwind CSS – By Matt Brailsford</title>
+
+        <meta name="description" content="An introduction to Tailwind CSS">
+        <meta name="author" content="Matt Brailsford">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="css/highlight.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link ' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal cloak">
+
+            <div class="slides">
+
+                <!-- TITLE -->
+                <section data-background-color="#000"
+                    data-background-image="img/ski4.jpg">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>Getting Airborne with</div>
+                            <div class="teal">Tailwind CSS</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <!-- STORY -->
+                <section>
+    
+                        <section data-background-color="#fff"
+                            data-background-image="img/boklov2-magic.jpg">
+                            <div class="inner trim">
+                                <div style="width:40%;" class="fragment">
+                                    <h2 class="bigtext">
+                                        <div>Jan Boklöv</div>
+                                        <div class="teal">88-89 FIS Ski Jumping</div>
+                                        <div class="teal">World Cup Champion</div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </section>
+    
+                        <section data-background-color="#fff"
+                            data-background-image="img/jumps.jpg">
+                        </section>
+    
+                        <section data-background-color="#fff"
+                            data-background-image="img/boklov5.jpg">
+                        </section>
+    
+                        <section
+                            data-background-image="img/boklov3-magic2.jpg">
+                            <div class="inner trim">
+                                <h2 class="bigtext">
+                                    <div>&quot;I was told - What do you</div>
+                                    <div>want with that? No one</div>
+                                    <div>jumps like that, <span class="teal">that</span></div>
+                                    <div><span class="teal">will never work</span>.&quot;</div>
+                                </h2>
+                            </div>
+                        </section>
+    
+                    </section>
+
+                <!-- ME -->
+                <section>
+                    <div class="inner trim">
+                        <h2 class="bigtext">
+                            <div>Matt Brailsford</div>
+                            <div class="teal">@mattbrailsford - outfield.digital</div>
+                        </h2>
+                    </div>
+                </section>
+
+                <!-- INTRO -->
+                <section>
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Why is CSS such a</div>
+                                <div class="teal">nightmare?</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class=""><span class="fragment">Non-modular designs</span></div>
+                                <div class="teal"><span class="fragment">Client-led Design</span></div>
+                                <div class=""><span class="fragment">Phased projects</span></div>
+                            </h2>
+                        </div>
+                    </section>
+                    
+                </section>
+
+                <!--
+                <section data-background-color="#e74c3c">
+                    <div class="inner trim">
+                        <h2 class="bigtext">
+                            <div>Warning!</div>
+                            <div>(Warning flag?)</div>
+                        </h2>
+                    </div>
+                </section>
+                -->
+
+                <section>
+
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>What is</div>
+                                <div class="teal">Tailwind CSS</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section  data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div><span class="teal">Tailwind is a</span> Utility-First</div>
+                                <div><span class="teal">CSS Framework for</span> rapidly</div>
+                                <div><span class="teal">building</span> custom <span class="teal">user interfaces</span></div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="white"
+                        data-background-image="img/our4.png"
+                        data-background-position="top center">
+                    </section>
+
+                    <section data-background-color="#98d768">
+                        <div class="inner trim">
+                            <img src="img/forum-post.png" alt="Our Umbraco Forum Post" class="plain" 
+                                style="width: 90%;" />
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre><code class="hljs html xml" data-trim>
+<a href="#" class="forum-post">
+  <div class="forum-post__media">
+    &lt;img class="forum-post__avatar" src="..." alt="Matt Brailsford" />
+  </div>
+  <div class="forum-post__content">
+    <h3 class="forum-post__header">Need help getting started</h3>
+    <p class="forum-post__meta">Created by Matt Brailsford 2 minutes ago</p>
+    <div class="forum-post__tag tag">Getting Started</div>
+  </div>
+</a>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre><code class="hljs html xml" data-trim>
+&lt;a href="#" class="bg-white border p-8 flex">
+  &lt;div class="flex-0">
+    &lt;img class="w-16 h-16 rounded" src="..." alt="Matt Brailsford" />
+  &lt;/div>
+  &lt;div class="flex-1 ml-8">
+    &lt;h3 class="text-xl leading-tight">Need help getting started&lt;/h3>
+    &lt;p class="text-sm text-grey leading-tight mb-3">
+      Created by Matt Brailsford 2 minutes ago
+    &lt;/p>
+    &lt;div class="text-xs font-bold text-white leading-normal &crarr;
+      rounded-full bg-blue px-4 py-1">Getting Started&lt;/div>
+  &lt;/div>
+&lt;/a>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs css" data-trim>
+.bg-white { background-color: white; }
+.border { border: 1px; }
+.p-8 { padding: 2rem; }
+.flex { display: flex; }
+.flex-0 { flex: 0; }
+.w-16 { width: 4rem; }
+.h-16 { height: 4rem; }
+.rounded { border-radius: .25rem; }
+...
+
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#000"
+                        data-background-image="img/top.jpg"
+                        data-background-transition="fade">
+                    </section>
+
+                    <section data-background-color="#000"
+                        data-background-image="img/top2.jpg"
+                        data-transition="fade-in slide-out"
+                        data-background-transition="fade">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Hell no!</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#1da1f2">
+                        <div class="inner trim">
+                            <img src="img/tweets.png" alt="" class="plain" style="margin-top:-30px;">
+                        </div>
+                        <aside class="notes">
+                            Dave Shea - CSS Zen Garden
+                            Zeldman - A List Apart
+                            Aaron - Microsoft UX guy
+                        </aside>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank">
+                                <img src="img/blog_01.png" alt="" class="plain" />
+                            </a>
+                        </div>
+                        <aside class="notes">
+                            Nicolas Gallagher
+                        </aside>
+                    </section>
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <a href="https://johnpolacek.github.io/the-case-for-atomic-css/" target="_blank">
+                                <img src="img/blog_05.png" alt="" class="plain" />
+                            </a>
+                        </div>
+                        <aside class="notes">
+                            
+                        </aside>
+                    </section>
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/" target="_blank">
+                                <img src="img/blog_03.png" alt="" class="plain" />
+                            </a>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div><span>Heroku</span> <span class="teal">Yahoo</span> <span>GitHub</span></div>
+                                <div><span class="teal">Medium</span> <span>KickStarter</span> <span class="teal">TED</span></div>
+                                <div><span>BuzzFeed</span> <span class="teal">Tinder</span> <span>Firebase</span></div>
+                                <div><span class="teal"><span style="text-decoration: line-through;">Rage</span> Stack Overflow</span> <span>Twitch</span></div>
+                                <div><span>Algolia</span> <span class="teal">Drip</span> <span>Marvel App</span></div>
+                            </h2>
+                        </div>
+                    </section>
+
+                </section>
+                
+                <section>
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Common</div>
+                                <div class="teal">Reservations</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Isn't this just</div>
+                                <div class="white">Inline styles?</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <!-- <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>NO!</div>
+                            </h2>
+                        </div>
+                    </section> -->
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div><span class="fragment">Low specificity</span></div>
+                                <div class="teal"><span class="fragment">1 to Many Relationship</span></div>
+                                <div><span class="fragment">Responsive &amp; Stateful</span></div>
+                                <div class="teal"><span class="fragment">Constrained</span></div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Won't this be harder to</div>
+                                <div class="white">Maintain?</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff"
+                        data-background="url(img/bg_lego_trans.png) center center repeat">
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 40%;margin-right: 10%;">
+                                    <img src="img/airfix.png" alt="Airfix" class="plain">
+                                </div>
+                                <div class="trim" style="width: 40%;margin-left: 10%;">
+                                    <img src="img/lego.png" alt="Lego" class="plain">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff"
+                        data-background-image="img/lego_airfix3.jpg">
+                    </section>
+
+                    <!-- <section data-background-color="#fff"
+                        data-background="url(img/bg_lego_ikea.png) center center repeat">
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 40%;margin-right: 10%;">
+                                    <img src="img/lego.png" alt="Lego" class="plain">
+                                </div>
+                                <div class="trim" style="width: 40%;margin-left: 10%;">
+                                    <img src="img/ikea.png" alt="Ikea" class="plain">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff"
+                        data-background-image="img/lego_airfix2.jpg">
+                    </section> -->
+
+                    <!-- <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Abstract away repetition with</div>
+                                <div class="teal">Components</div>
+                            </h2>
+                        </div>
+                    </section> -->
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Won't this be bad for</div>
+                                <div class="white">Performance?</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>GZIP</div>
+                            </h2>
+                        </div>
+                        <aside class="notes">
+                            "From a file size standpoint, you shouldn’t worry about repeated class names in the HTML. That’s what Gzip is for. The deflate algorithm was specifically made to handle duplicate strings, so there’s no point in trimming away characters in your HTML. The resulting file size will make little to no difference whether you use a few or a lot of classes.
+                            On the other hand, the more a selector is repeated in a stylesheet, the more work your browser has to do to resolve all styles. If you have a single .title-green class for a given style, it simply matches all .title-green in the page. But if you have many classes doing the same thing (using @mixin) or similar selectors doing different things (using @extend), the more expensive it will be for the browser to match.
+                            HTML “bloat” doesn’t matter, but CSS does."
+                        </aside>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Isn't this</div>
+                                <div class="white">Unsemantic?</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>&quot;CSS CLASSES SHOULD SAY</div>
+                                <div><span class="teal">WHAT THEY ARE</span> NOT</div>
+                                <div><span class="teal">WHAT THEY LOOK LIKE</span>&quot;</div>
+                            </h2>
+                        </div>
+                        <aside class="notes">
+                            The reality is we break this rule constantly.
+                            I understand where this comes from, we don't want to make the same historic mistakes that we have made Before
+                            but this is too black and white. v5 comparison? Some leasons were learnt and applied to v4.
+                        </aside>
+                    </section>
+
+                    <section data-background-color="white"
+                        data-background-image="img/our4.png"
+                        data-background-position="top center">
+                        <aside class="notes">
+                            Lets look again at our forum post on our, if we scroll down the page
+                        </aside>
+                    </section>
+
+                    <section data-background-color="white"
+                        data-background-image="img/our2.png"
+                        data-background-position="top center">
+                    </section>
+
+                    <section data-background-color="white"
+                        data-background-image="img/our3.png"
+                        data-background-position="top center">
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs css" data-trim>
+.forum-post {...}
+.forum-post__media {...}
+.forum-post__content {...}
+...
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 50%;">
+                                    <pre class="text-lg"><code class="hljs css" data-trim>
+.meetup-post { }
+.meetup-post__media { }
+.meetup-post__content { }
+...
+                            </code></pre>
+                                </div>
+                                <div class="trim" style="width: 50%;">
+                                    <pre class="text-lg"><code class="hljs css" data-trim>
+.twitter-post { }
+.twitter-post__media { }
+.twitter-post__content { }
+...
+                            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs css" data-trim>
+.forum-post,
+.meetup-post,
+.twitter-post {...}
+
+.forum-post__media,
+.meetup-post__media,
+.twitter-post_media {...}
+...
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs css" data-trim>
+.card {...}
+.card__media {...}
+.card__content {...}
+...
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs css" data-trim>
+.card--forum {...}
+.card--meetup {...}
+.card--twitter {...}
+...
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 50%;">
+                                    <pre class="text-lg"><code class="hljs css" data-trim>
+.margin-none {...}
+.padding-none {...}
+.container {...}
+.col-md-6 {...}
+                            </code></pre>
+                                </div>
+                                <div class="trim" style="width: 50%;">
+                                    <pre class="text-lg"><code class="hljs css" data-trim>
+.text-center {...}
+.bg-primary {...}
+.btn-secondary {...}
+.text-white {...}
+                            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Presentational classes are</div>
+                                <div class="teal">not evil</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>It's a question of</div>
+                                <div class="white">dependencies</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff"
+                        data-background="url(img/bg_grey_trans.png) center center repeat">
+                        <div class="inner">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 40%; margin-right: 10%;">
+                                    <h3 class="bigtext">
+                                        <div class="teal">SEMANTIC CSS</div>
+                                        <div class="white">CSS</div>
+                                        <div class="white">DEPENDS ON</div>
+                                        <div class="white">HTML</div>
+                                        <div class="teal">Reusable HTML</div>
+                                    </h3>
+                                </div>
+                                <div class="trim" style="width: 40%; margin-left: 10%;">
+                                    <h3 class="bigtext">
+                                        <div>Presentational CSS</div>
+                                        <div class="teal">HTML</div>
+                                        <div class="teal">DEPENDS ON</div>
+                                        <div class="teal">CSS</div>
+                                        <div>Reusable CSS</div>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Choose</div>
+                                <div class="teal">Based on your needs</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#000"
+                        data-background-image="img/start4.jpg">
+                    </section>
+
+                </section>
+
+                <section>
+                    
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>The Tailwind CSS</div>
+                                <div class="teal">Workflow</div>
+                            </h2>
+                        </div>
+                    </section>
+                    
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Before Tailwind</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <img src="img/workflow_sass.png" alt="" class="plain" style="margin-top: -30px;">
+                        </div>
+                    </section>
+                    
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">After Tailwind</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <img src="img/workflow_tailwind.png" alt="" class="plain" style="margin-top: -20px;">
+                        </div>
+                        
+                    </section>
+
+                    <section data-background-video="img/composition-speed.mp4" 
+                        data-background-video-muted>
+                        <div data-caption>Video by <a href="https://twitter.com/simonswiss" class="white">@simonswiss</a></div>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Getting started with</div>
+                                <div class="teal">Tailwind CSS</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Installation</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs bash" data-trim>
+# Step 1: Init project
+npm init -y
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs bash" data-trim>
+# Step 2: Install tailwind
+npm install tailwindcss --save-dev
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs bash" data-trim>
+# Step 3: Create tailwind config file
+./node_modules/.bin/tailwind init tailwind.js
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs css" data-trim>
+/* Step 4: Create main css file */
+@tailwind preflight;
+@tailwind components;
+/* Custom Components Here */
+@tailwind utilities;
+/* Custom Utilities Here */
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs bash" data-trim>
+# Step 5: Process CSS file
+./node_modules/.bin/tailwind build main.css &crarr;
+    -c ./tailwind.js -o ./dist/main.css
+
+# Instructions for Webpack, Gulp, Laravel Mix, 
+# Encore and Brunch available
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Configuration</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">tailwind.js</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre><code data-trim>
+// .text-black, .bg-red
+colors: {
+  'transparent': 'transparent',
+  'black': '#22292f',
+  'grey-darkest': '#3d4852',
+  'grey-darker': '#606f7b',
+  'grey-dark': '#8795a1',
+  'grey': '#b8c2cc',
+  'grey-light': '#dae1e7',
+  ...
+},
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+// .font-sans
+fonts: {
+  'sans': [
+    'Helvetica Neue',
+    ...
+  ],
+  'serif': [
+    'Constantia',
+    ...
+  ]
+},
+                            </code></pre>
+                                </div>
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+// .text-sm
+textSizes: {
+  'xs': '.75rem',  // 12px
+  'sm': '.875rem', // 14px
+  ...
+},
+
+// .font-thin
+fontWeights: {
+  'hairline': 100,
+  'thin': 200,
+  ...
+},
+                            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+// .p-1
+padding: {
+  'px': '1px',
+  '0': '0',
+  '1': '0.25rem',
+  '2': '0.5rem',
+  '3': '0.75rem',
+  '4': '1rem',
+  '5': '1.25rem',
+  '6': '1.5rem',
+  ...
+},
+                            </code></pre>
+                                </div>
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+// .m-1
+margin: {
+  'px': '1px',
+  '0': '0',
+  '1': '0.25rem',
+  '2': '0.5rem',
+  '3': '0.75rem',
+  '4': '1rem',
+  '5': '1.25rem',
+  '6': '1.5rem',
+  ...
+},
+                            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+// .w-1/2
+width: {
+  'auto': 'auto',
+  'px': '1px',
+  '1': '0.25rem',
+  '2': '0.5rem',
+  ...
+  '1/6': '16.66667%',
+  '5/6': '83.33333%',
+  'full': '100%',
+  'screen': '100vw'
+},
+                            </code></pre>
+                                </div>
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+// .h-1/2
+height: {
+  'auto': 'auto',
+  'px': '1px',
+  '1': '0.25rem',
+  '2': '0.5rem',
+  ...
+  '1/6': '16.66667%',
+  '5/6': '83.33333%',
+  'full': '100%',
+  'screen': '100vh'
+},
+                            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <div class="flex items-center">
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+colors: { ... },
+screens: { ... },
+fonts: { ... },
+textSizes: { ... },
+fontWeights: { ... },
+leading: { ... },
+tracking: { ... },
+textColors: { ... },
+backgroundColors: { ... },
+backgroundSize: { ... },
+borderWidths: { ... },
+borderColors: { ... },
+borderRadius: { ... },
+                            </code></pre>
+                                </div>
+                                <div class="trim" style="width: 50%;">
+                                    <pre><code class="hljs js" data-trim>
+width: { ... },
+height: { ... },
+minWidth: { ... },
+minHeight: { ... },
+maxWidth: { ... },
+maxHeight: { ... },
+padding: { ... },
+margin: { ... },
+negativeMargin: { ... },
+shadows: { ... },
+zIndex: { ... },
+opacity: { ... },
+svgFill: { ... },
+svgStroke: { ... },
+                            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre><code data-trim>
+modules: {
+  appearance: ['responsive'],
+  backgroundAttachment: ['responsive'],
+  backgroundColors: ['responsive', 'hover', 'focus', 'group-hover'],
+  backgroundPosition: ['responsive'],
+  backgroundRepeat: ['responsive'],
+  backgroundSize: ['responsive'],
+  borderCollapse: [],
+  borderColors: ['responsive', 'hover', 'focus'],
+  ...
+},
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Usage</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;html>
+  &lt;head>
+    &lt;title>...&lt;/title>
+    &lt;link href="dist/main.css" rel="stylesheet">
+  &lt;/head>
+  &lt;body>
+    ...
+  &lt;/body>
+&lt;/html>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;div class="border bg-white p-6 mb-3">
+  &lt;h3 class="font-sans text-xl text-blue">
+    Hello World
+  &lt;/h3>
+  &lt;p class="font-serif text-base text-black">
+    Lorem ipsum dolar sit amet...
+  &lt;/p>
+&lt;/div>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">State</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;a href="..." class="bg-blue &crarr;
+  hover:bg-blue-dark focus:bg-blue-dark">
+  Find out more
+&lt;/a>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;a href="..." class="group">
+  &lt;img src="..." class="border-white &crarr;
+    group-hover:border-blue" />
+  &lt;span class="no-underline group-hover:underline">
+    Find out more
+  &lt;/span>
+&lt;/a>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Responsive</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs js" data-trim>
+screens: {
+  'sm': '576px',
+  'md': '768px',
+  'lg': '992px',
+  'xl': '1200px',
+},
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;div class="w-full md:w-1/2 lg:w-1/4">
+  &lt;h3>Hello World&lt;/h3>
+&lt;/div>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Components</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Do you really need</div>
+                                <div class="teal">a component?</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs razor" data-trim>
+@for(var lnk in links){
+  &lt;a href="@lnk.Url" class="text-blue no-underline &crarr;
+    hover:text-blue-dark">
+    @lnk.Name
+  &lt;/a>
+}
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs razor" data-trim>
+@for(var lnk in links){
+  @RenderLink(lnk)
+}
+
+@helper RenderLink(Link lnk) {
+  &lt;a href="@lnk.Url" class="text-blue no-underline &crarr;
+    hover:text-blue-dark">
+    @lnk.Name
+  &lt;/a>
+}
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs razor" data-trim>
+@for(var lnk in links){
+  @Html.Partial("Link", lnk)
+}
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;a href="..." class="inline-block rounded p-3 &crarr;
+  bg-blue hover:bg-blue-dark">
+  Click me
+&lt;/a>
+
+&lt;a href="..." class="inline-block rounded p-3 &crarr;
+  bg-green hover:bg-green-dark">
+  Click me too
+&lt;/a>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs scss" data-trim>
+.btn { @apply inline-block rounded p-3; }
+.btn--blue { @apply bg-blue; }
+.btn--blue:hover { @apply bg-blue-dark; }
+.btn--green { @apply bg-green; }
+.btn--green:hover { @apply bg-green-dark; }
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs scss" data-trim>
+.btn { @apply inline-block rounded p-3; }
+
+@screen sm {
+    .btn { @apply p-6; }
+}
+
+@screen md {
+    .btn { @apply p-9; }
+}
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs scss" data-trim>
+.btn--blue { 
+    background-image: linear-gradient(&crarr;
+        config('colors.blue'), &crarr;
+        config('colors.blue-dark'));
+}
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;a href="..." class="btn btn--blue">
+  Click me
+&lt;/a>
+
+&lt;a href="..." class="btn btn--green">
+  Click me too
+&lt;/a>
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <!--
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs scss" data-trim>
+@responsive {
+  .btn { @apply inline-block rounded p-3; }
+  .btn--blue { @apply bg-blue; }
+  .btn--blue:hover { @apply bg-blue-dark; }
+  .btn--green { @apply bg-green; }
+  .btn--green:hover { @apply bg-green-dark; }
+}
+                            </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="inner trim">
+                            <pre class="text-lg"><code class="hljs html" data-trim>
+&lt;a href="..." class="btn btn--blue &crarr;
+  md:btn--green">
+  Click me
+&lt;/a>
+                            </code></pre>
+                        </div>
+                    </section>
+                    -->
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Tools</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff"
+                        data-background-image="img/vscode_plugin.png"
+                        data-background-position="top left">
+                        <a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss" target="_blank" class="stretch" style="display:block;"></a>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Tailwind CSS</div>
+                                <div class="teal">In Practice</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="white"
+                        data-background-image="img/cycleengland.jpg"
+                        data-background-position="top left">
+                        <a href="https://www.cycle-england.co.uk" target="_blank" class="stretch" style="display:block;"></a>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Benefits</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div><span class="fragment">Rapid Workflow</span></div>
+                                <div class="teal"><span class="fragment">Small filesize*</span></div>
+                                <div><span class="fragment">Easy to adapt</span></div>
+                                <div class="teal"><span class="fragment">Easy to understand</span></div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#44a8b3">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">Challenges</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div><span class="fragment">Unfamiliar Syntax</span></div>
+                                <div class="teal"><span class="fragment">Razor Components</span></div>
+                                <div><span class="fragment">Busy Markup</span></div>
+                            </h2>
+                        </div>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>Find out more about</div>
+                                <div class="teal">Tailwind CSS</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div><a href="https://www.tailwindcss.com">www.tailwindcss.com</a></div>
+                            </h2>
+                        </div>
+                    </section>
+
+                </section>
+
+                <!-- STORY -->
+                <section>
+
+                    <section
+                        data-background-image="img/boklov3-magic.jpg"
+                        data-background-transition="fade">
+                    </section>
+
+                    <section
+                        data-background-image="img/boklov3-magic2.jpg"
+                        data-background-transition="fade"
+                        data-transition="fade-in slide-out">
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div>&quot;The truth is,</div>
+                                <div><span class="teal">I did it for myself</span></div>
+                                <div>not so that all the world</div>
+                                <div>jumps like me.&quot;</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                </section>
+
+                <section data-background-color="#000"
+                    data-background-image="img/boklov4.jpg">
+                    <div class="inner trim">
+                        <h2 class="bigtext">
+                            <div>Thank You</div>
+                            <div class="teal">@mattbrailsford - outfield.digital</div>
+                        </h2>
+                    </div>
+                </section>
+
+                <section>
+
+                    <section>
+                        <div class="inner trim">
+                            <h2 class="bigtext">
+                                <div class="white">APPENDIX</div>
+                            </h2>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim" style="text-align: left;font-size:28px;">
+                            <p><strong>Every F****ing Bootstrap Website Ever</strong><br /><a href="http://adventurega.me/bootstrap/">http://adventurega.me/bootstrap/</a></p>
+                            <p><strong>About HTML semantics and front-end architexture</strong><br /><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank">http://nicolasgallagher.com/about-html-semantics-front-end-architecture/</a></p>
+                            <p><strong>The Case for Atomic CSS</strong><br /><a href="https://johnpolacek.github.io/the-case-for-atomic-css/" target="_blank">https://johnpolacek.github.io/the-case-for-atomic-css/</a></p>
+                            <p><strong>CSS Utility Classes and "Seperation of Concerns"</strong><br /><a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/" target="_blank">https://adamwathan.me/css-utility-classes-and-separation-of-concerns/</a></p>
+                        </div>
+                    </section>
+
+                    <section data-background-color="#fff">
+                        <div class="inner trim" style="text-align: left;font-size:28px;">
+                            <p><strong>Tailwind CSS VS Code Plugin</strong><br /><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss" target="_blank">https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss</a></p>
+                            <p><strong>Build User Interfaces by Composing CSS Utility Classes with Tailwind</strong><br /><a href="https://egghead.io/courses/build-user-interfaces-by-composing-css-utility-classes-with-tailwind" target="_blank">https://egghead.io/courses/build-user-interfaces-by-composing-css-utility-classes-with-tailwind</a></a></p>
+                            <p><strong>Cycle England</strong><br /><a href="https://www.cycle-england.co.uk/" target="_blank">https://www.cycle-england.co.uk/</a></a></p>
+                            <p><strong>PurgeCSS</strong><br /><a href="https://github.com/FullHuman/purgecss" target="_blank">https://github.com/FullHuman/purgecss</a></a></p>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+
+        </div>
+
+        <a id="logo" href="http://outfield.digital" target="_blank">
+            <svg role="img" id="" aria-hidden="true" viewBox="0 0 100 100">
+                <path class="logo__circle" d="M 50.000914,0 A 50.000298,50.000298 0 0 0 0,50.000914 50.000298,50.000298 0 0 0 50.000914,100 50.000298,50.000298 0 0 0 100,50.000914 50.000298,50.000298 0 0 0 50.000914,0 Z" />
+                <path class="logo__leaf" d="M 50 26.25 A 23.749988 23.750192 0 0 0 26.25 50 L 26.25 73.75 L 50 73.75 A 23.749988 23.750192 0 0 0 73.75 50 L 73.75 26.25 L 50 26.25 z M 50 33.556641 L 66.443359 33.556641 L 66.443359 37.210938 L 62.789062 37.210938 L 59.138672 40.863281 L 66.443359 40.863281 L 66.443359 44.521484 L 55.480469 44.521484 L 51.826172 48.173828 L 66.443359 48.173828 L 66.443359 50 A 16.4423 16.44244 0 0 1 66.333984 51.826172 L 48.173828 51.826172 L 44.521484 55.480469 L 65.480469 55.480469 A 16.4423 16.44244 0 0 1 63.662109 59.134766 L 40.867188 59.134766 L 37.212891 62.789062 L 60.324219 62.789062 A 16.4423 16.44244 0 0 1 50 66.443359 L 33.556641 66.443359 L 33.556641 50 A 16.4423 16.44244 0 0 1 50 33.556641 z " />
+            </svg>
+        </a>
+
+        <div class="caption"></div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bigtext.js"></script>
+        <script src="js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            $("section:not([data-background-transition])")
+                .attr("data-background-transition", "slide");
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                controlsTutorial: false,
+
+                progress: true,
+                history: true,
+                center: true,
+
+                //width: 1024,
+                //height: 576,
+
+                transitionSpeed: 'fast',
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                //backgroundTransition: 'slide',
+
+                keyboard: {
+                    27: 'Fullscreen'
+                },
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+                        hljs.registerLanguage("razor", function (b) {
+                            var a = "foreach|0 var|0 if|0 in|0 else|0 model|0 using|0 false|0true|0 null|0 int|0 for|0 double|0 decimal|0 float|0 string|0 new|0 helper|0";
+                            return { k: a, c: [{ cN: "built_in", b: "Html|Scripts|RenderBody|RenderSection|Styles" }, { cN: "comment", b: "@[*]", e: "[*]@" }, { cN: "start", b: /[@][?\\w]*/, i: /[@][{*]/ }, { cN: "string", b: '"((?!@))', e: '"', i: "\\n" }, { b: "<", e: ">", i: "</?", sL: "xml", c: [{ b: '"@', e: '"', sL: "razor" }] }] }
+                        });
+                        hljs.initHighlightingOnLoad(); 
+                    } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+            var doBigText = function(cs) {
+                var $cs = $(cs);
+                $cs.find(".bigtext").bigtext();
+                Reveal.layout();
+            }
+
+            var doProcessCaption = function (cs) {
+                var caption = $(cs).find("[data-caption]");
+                if (caption.length > 0) {
+                    $(".caption").html($(caption[0]).clone());
+                } else {
+                    $(".caption").empty();
+                }
+            }
+
+            var doOnChange = function (cs) {
+                doBigText(cs);
+                doProcessCaption(cs);
+            }
+
+            Reveal.addEventListener('ready', function( event ) {
+                doOnChange(event.currentSlide);
+                $(".cloak").removeClass("cloak");
+            });
+            Reveal.addEventListener('slidechanged', function( event ) {
+                doOnChange(event.currentSlide);
+            });
+
+
+        </script>
+
+    </body>
+</html>
