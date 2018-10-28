@@ -8,7 +8,7 @@
 * [2016-04-27] [Leeds Umbraco Meetup - Ditto - Introduction](http://mattbrailsford.github.io/presentations/2016/04/27/ditto-introduction/index.html) ([Src](../gh-pages/2016/04/27/ditto-introduction))
 * [2016-10-23] [UI-O-Matic - Version 2.0](http://mattbrailsford.github.io/presentations/2016/10/23/ui-o-matic-v2/index.html) ([Src](../gh-pages/2016/10/23/ui-o-matic-v2))
 * [2016-11-19] [Manchester Umbraco Meetup - Code Cabin - The Umbraco Developer Unconference](http://mattbrailsford.github.io/presentations/2016/11/19/codecabin/index.html) ([Src](../gh-pages/2016/11/19/codecabin))
-* [2017-06-09] [Codegarden 2017 - Progressive Web Apps - App Development for the Rest of Us](http://mattbrailsford.github.io/presentations/2017/06/09/progressive-web-apps/index.html) ([Src](../gh-pages/2017/06/09/progressive-web-apps))
+* [2017-06-09] [Codegarden 2017 - Progressive Web Apps - App Development for the Rest of Us](http://mattbrailsford.github.io/presentations/2017/06/09/progressive-web-apps/index.html) ([Src](../gh-pages/2017/06/09/progressive-web-apps) | [Video](https://vimeo.com/225213454))
 * [2018-04-27] [Umbraco Festival Deutschland 2018 - How I fell in love with VueJS](http://mattbrailsford.github.io/presentations/2018/04/27/how-i-fell-in-love-with-vuejs.pdf) ([Video](https://slideslive.com/38907393/how-i-fell-in-love-with-vuejs))
 * [2018-10-26] [Umbraco DK Festival 2018 - Getting Airborne with Tailwind CSS](http://mattbrailsford.github.io/presentations/2018/10/26/getting-airborne-with-tailwind-css/index.html) ([Src](../gh-pages/2018/10/26/getting-airborne-with-tailwind-css))
 
