@@ -10,9 +10,10 @@
 * [2016-11-19] [Manchester Umbraco Meetup - Code Cabin - The Umbraco Developer Unconference](http://mattbrailsford.github.io/presentations/2016/11/19/codecabin/index.html) ([Src](../gh-pages/2016/11/19/codecabin))
 * [2017-06-09] [Codegarden 2017 - Progressive Web Apps - App Development for the Rest of Us](http://mattbrailsford.github.io/presentations/2017/06/09/progressive-web-apps/index.html) ([Src](../gh-pages/2017/06/09/progressive-web-apps))
 * [2018-04-27] [Umbraco Festival Deutschland 2018 - How I fell in love with VueJS](http://mattbrailsford.github.io/presentations/2018/04/27/how-i-fell-in-love-with-vuejs.pdf)
+* [2018-10-26] [Umbraco DK Festival 2018 - Getting Airborne with Tailwind CSS](http://mattbrailsford.github.io/presentations/2018/10/26/getting-airborne-with-tailwind-css/index.html) ([Src](../gh-pages/2018/10/26/getting-airborne-with-tailwind-css))
 
 ### License
 
-Copyright &copy; 2010-2017 Matt Brailsford (and [other contributors](https://github.com/mattbrailsford/presentations/graphs/contributors))
+Copyright &copy; 2010-2018 Matt Brailsford (and [other contributors](https://github.com/mattbrailsford/presentations/graphs/contributors))
 
 Licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](LICENSE.md)
