@@ -11,6 +11,7 @@
 * [2017-06-09] [Codegarden 2017 - Progressive Web Apps - App Development for the Rest of Us](http://mattbrailsford.github.io/presentations/2017/06/09/progressive-web-apps/index.html) ([Src](../gh-pages/2017/06/09/progressive-web-apps) | [Video](https://vimeo.com/225213454))
 * [2018-04-27] [Umbraco Festival Deutschland 2018 - How I fell in love with VueJS](http://mattbrailsford.github.io/presentations/2018/04/27/how-i-fell-in-love-with-vuejs.pdf) ([Video](https://slideslive.com/38907393/how-i-fell-in-love-with-vuejs))
 * [2018-10-26] [Umbraco DK Festival 2018 - Getting Airborne with Tailwind CSS](http://mattbrailsford.github.io/presentations/2018/10/26/getting-airborne-with-tailwind-css/index.html) ([Src](../gh-pages/2018/10/26/getting-airborne-with-tailwind-css))
+* [2019-10-11] [DUUGFest 2019 - Back to the Future With Static Site Generation](http://mattbrailsford.github.io/presentations/2019/10/11/back-to-the-future-with-static-site-gen.pdf)
 
 ### License
 
