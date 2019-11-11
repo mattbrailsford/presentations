@@ -12,6 +12,7 @@
 * [2018-04-27] [Umbraco Festival Deutschland 2018 - How I fell in love with VueJS](http://mattbrailsford.github.io/presentations/2018/04/27/how-i-fell-in-love-with-vuejs.pdf) ([Video](https://slideslive.com/38907393/how-i-fell-in-love-with-vuejs))
 * [2018-10-26] [Umbraco DK Festival 2018 - Getting Airborne with Tailwind CSS](http://mattbrailsford.github.io/presentations/2018/10/26/getting-airborne-with-tailwind-css/index.html) ([Src](../gh-pages/2018/10/26/getting-airborne-with-tailwind-css))
 * [2019-10-11] [DUUGFest 2019 - Back to the Future With Static Site Generation](http://mattbrailsford.github.io/presentations/2019/10/11/back-to-the-future-with-static-site-gen.pdf)
+* [2019-10-11] [UKFest 2019 - Simplifying eCommerce with Vendr](http://mattbrailsford.github.io/presentations/2019/11/08/simplifying-ecommerce-with-vendr.pdf)
 
 ### License
 
