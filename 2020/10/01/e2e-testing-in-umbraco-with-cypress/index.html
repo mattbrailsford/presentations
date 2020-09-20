@@ -1,0 +1,960 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="css/to.css" id="theme">
+
+    <!-- GREEN: #04c38d -->
+    <!-- BLUE: #162332 -->
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="css/hljs-to-dark.css" id="highlight-theme">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+
+                <section data-background-color="#162332" data-background-image="img/bg-science.png">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>End-to-End Testing</div>
+                            <div class="alt">in Umbraco</div>
+                            <div>With Cypress</div>
+                        </h1>
+                        <p>By Matt Brailsford / @mattbrailsford</p>
+                    </div>
+                </section>
+
+            </section>
+            <section>
+
+                <section>
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>Matt Brailsford</div>
+                            <div class="alt">@MATTBRAILSFORD — OUTFIELD DIGITAL</div>
+                        </h1>
+                    </div>
+                </section>
+
+            </section>
+            <section>
+
+                <section data-background-color="#162332">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>Back in the</div>
+                            <div class="alt">Good Old Days</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>Just release it</div>
+                            <div class="alt">let the users test it</div>
+                        </h1>
+                    </div>
+                </section>
+
+            </section>
+            <section>
+
+                <section data-background-color="#162332">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>Nowadays</div>
+                            <div class="alt">however</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>With great packages</div>
+                            <div class="alt">comes great</div>
+                            <div class="alt">responsibility</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <section data-background-image="img/umarketingsuite.png"></section>
+
+                <section data-background-image="img/usync.png"></section>
+
+                <section data-background-image="img/vendrnet.png"></section>
+
+            </section>
+            <section>
+
+                <section data-background-color="#162332">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>Ensuring</div>
+                            <div class="alt"> Quality</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <section data-background-color="#04c38d">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div class="white">Testing</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <section data-transition="slide-in fade-out">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div class="fragment">Unit Testing</div>
+                            <div class="fragment alt">Integration Testing</div>
+                            <div class="fragment">End-to-End Testing</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <section data-transition="fade-in slide-out">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div class="opacity-10">Unit Testing</div>
+                            <div class="alt opacity-10">Integration Testing</div>
+                            <div class="">End-to-End Testing</div>
+                        </h1>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>End-to-end testing is the practice of</div>
+                            <div class="alt">testing an entire application</div>
+                            <div class="alt">from beginning to end</div>
+                            <div>to ensure the application</div>
+                            <div class="alt">behaves as expected</div>
+                        </h1>
+                    </div>
+                </section>
+
+            </section>
+
+            <section>
+
+                <section data-background-color="#162332">
+                    <div class="inner trim">
+                        <img src="img/cypress-io-logo-white.svg" alt="Cypress">
+                    </div>
+                </section>
+
+            </section>
+
+            <section>
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Why use</div>
+                        <div class="alt">Cypress?</div>
+                    </h1>
+                </section>
+
+                <section>
+                    <h1 class="bigtext">
+                        <div><span class="">js based tests</span> <span class="alt fragment">runs in browser</span></div>
+                        <div><span class="alt fragment">integrated test runner</span> <span class="fragment">fast</span></div>
+                        <div><span class="fragment">built for modern web apps</span></div>
+                        <div><span class="alt fragment">lost of features OTB</span> <span class="fragment">easy to use</span></div>
+                    </h1>
+                </section>
+
+                <section>
+                    <h1 class="bigtext">
+                        <div>It's what</div>
+                        <div class="alt">everyone</div>
+                        <div>seems to be using</div>
+                    </h1>
+                </section>
+
+            </section>
+
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Getting started with</div>
+                        <div class="alt">Cypress</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="bash" data-trim data-noescape>
+							<span class="green">$</span> cd /your/project/path
+							<span class="fragment"><span class="green">$</span> <span class="hljs-built_in">npm</span> install cypress <span class="hljs-built_in">--save-dev</span></span>
+							<span class="fragment"><span class="green">$</span> <span class="hljs-built_in">npx</span> cypress open</span>
+						</code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="slide-in fade-out">
+                    <div>
+                        <img src="img/cypress-install-01.png" alt="" />
+                    </div>
+                </section>
+
+                <section data-background-color="#162332" data-transition="fade-in slide-out">
+                    <div>
+                        <img src="img/cypress-install-02.png" alt="" />
+                    </div>
+                </section>
+
+                <section data-background-color="#162332" data-background-video="img/testrunner.mp4" data-background-video-loop></section>
+
+            </section>
+
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Writing your first</div>
+                        <div class="alt">Test</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/integration/my-first-test.spec.js</span>
+                    <pre><code class="javascript" data-trim data-noescape>
+                        context('My First Test', () => {
+                            it('Does not do much!', () => {
+                                expect(true).to.equal(true)
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <img src="img/first-test-01.png" alt="" style="width: 100%;" />
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/integration/my-first-test.spec.js</span>
+                    <pre><code class="javascript" data-trim data-noescape data-line-numbers="3">
+                        context('My First Test', () => {
+                            it('Does not do much!', () => {
+                                expect(true).to.equal(false)
+                            })
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <img src="img/first-test-02.png" style="width: 60%;" />
+                </section>
+
+            </section>
+
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Useful</div>
+                        <div class="alt">Commands</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="javascript" data-trim data-noescape>
+                        <div class="">// Run code before all tests
+                        before(() => {
+                            ...
+                        })</div>
+                        <div class="fragment">// Run code before each test
+                        beforeEach(() => {
+                            ... 
+                        })</div>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="javascript" data-trim data-noescape>
+                        <div class="">// Navigate to a page
+                        cy.visit('https://example.cypress.io')</div>
+                        <div class="fragment">// Get a dom element, and click it
+                        cy.get('.btn--submit').click()</div>
+                        <div class="fragment">// Get a the li element that
+                        // contains the text 'Hello World'
+                        cy.get('li').contains('Hello World')</div>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="javascript" data-trim data-noescape>
+                        <div class="">// Type into an input
+                        cy.get('.name').type('John Smith')</div>
+                        <div class="fragment">// Select an select list option
+                        cy.get('.country').select('United Kingdom')</div>
+                        <div class="fragment">// Submit a form
+                        cy.get('.form').submit()</div>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="javascript" data-trim data-noescape>
+                        <div class="">// Check element is visible
+                        cy.get('.name').should('be.visible')</div>
+                        <div class="fragment">// Check number of elements
+                        cy.get('li').should('have.length', 4)</div>
+                        <div class="fragment">// Check element has class
+                        cy.get('.tree-item')
+                            .should('not.have.class', 'active')</div>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>And so many more</div>
+                        <div class="alt">https://docs.cypress.io/api</div>
+                    </h1>
+                </section>
+
+
+            </section>
+
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Setting up</div>
+                        <div class="alt">Umbraco</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre style="font-size: 1em;"><code class="bash" data-trim data-noescape>
+                        my-project
+                        ├── cypress
+                        │   ├── fixtures
+                        │   ├── integration
+                        │   ├── plugins
+                        │   └── support
+                        ├── <span class="green">cypress.json</span>
+                        └── <span class="green">package.json</span>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre style="font-size: 1em;"><code class="bash" data-trim data-noescape data-line-numbers="6,8,9,10">
+                        my-project
+                        ├── cypress
+                        │   ├── fixtures
+                        │   ├── integration
+                        │   ├── plugins
+                        │   ├── sandbox
+                        │   └── support
+                        ├── <span class="green">cypress.json</span>
+                        ├── <span class="green">cypress.env.json</span>
+                        ├── <span class="green">launch_sandbox.cmd</span>
+                        └── <span class="green">package.json</span>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress.json</span>
+                    <pre style="font-size: .9em;"><code class="json" data-trim data-noescape data-line-numbers="2,6,7,8,9">
+                        {
+                            "baseUrl": "http://localhost:40404",
+                            "viewportHeight": 1024,
+                            "viewportWidth": 1200,
+                            "env": {
+                                "username": "&lt;see cypress.env.json&gt;",
+                                "password": "&lt;see cypress.env.json&gt;",
+                                "wwwRoot": "./sandbox/",
+                                "sqlRoot": "./data/sql/"
+                            },
+                            "supportFile": "cypress/support/index.js",
+                            "videoUploadOnPasses" : false
+                        }
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress.env.json</span>
+                    <pre><code class="json" data-trim data-noescape>
+                        {
+                            "username": "admin@admin.com",
+                            "password": "password1234"
+                        }
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/launch_sandbox.cmd</span>
+                    <pre><code class="bash" data-trim data-noescape>
+                        "%programfiles%\iis express\iisexpress" 
+                          /path:"%cd%\sandbox" /port:40404 /systray:true
+                    </code></pre>
+                </section>
+
+                <section data-background-image="img/umbraco-install.png"></section>
+                
+            </section>
+
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Defining a</div>
+                        <div class="alt">Test Structure</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#04c38d">
+                    <h1 class="bigtext">
+                        <div class="blue">Arrange <span class="fragment alt">➔ Act</span> <span class="fragment">➔ Assert</span></div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre><code class="javascript" data-trim data-noescape>
+                        context('My First Test', () => {
+                            it('Does not do much!', () => {
+                                expect(true).to.equal(true)
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 1em;"><code class="javascript" data-trim data-noescape>
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                // Common Arrange
+                            })
+                            it('Should do something', () => {
+                                // Arrange
+                                // Act
+                                // Assert
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="slide-in fade-out">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape>
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                // Clean + seed database
+                                // Clear Umbraco caches
+                                // Login to Umbraco
+                            })
+                            it('Should do something', () => {
+                                // Seed test data
+                                // Perform interactions
+                                // Assert behavior
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="fade-in slide-out">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="3-4">
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                <span class="white">// Clean + seed database</span>
+                                <span class="white">// Clear Umbraco caches</span>
+                                // Login to Umbraco
+                            })
+                            it('Should do something', () => {
+                                // Seed test data
+                                // Perform interactions
+                                // Assert behavior
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+            </section>
+
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Custom Cypress</div>
+                        <div class="alt">Tasks</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre style="font-size: 1em;"><code class="bash" data-trim data-noescape data-line-numbers="6">
+                        my-project
+                        ├── cypress
+                        │   ├── fixtures
+                        │   ├── integration
+                        │   ├── plugins
+                        │   │   └── <span class="green">index.js</span>
+                        │   ├── sandbox
+                        │   └── support
+                        └── <span class="green">...</span>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/plugins/index.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape>
+                        module.exports = (on, config) => {
+                            on('task', {
+                                'app:seed': (seedType) => {
+                                    // Read connection string from sandbox web.config
+                                    // Connect MSSQL database
+                                    // Run a sql script against the database
+                                },
+                                'app:clearCache': () => {
+                                    // Install cache helper API controller from Gist
+                                    // Call API to clear all caches
+                                }
+                            })
+                        }
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="slide-in fade-out">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="3-4">
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                cy.task("app:seed", "clean");
+                                cy.task("app:clearCache");
+                                // Login to Umbraco
+                            })
+                            it('Should do something', () => {
+                                // Seed test data
+                                // Perform interactions
+                                // Assert behavior
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="fade-in slide-out">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="5">
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                cy.task("app:seed", "clean");
+                                cy.task("app:clearCache");
+                                <span class="white">// Login to Umbraco</span>
+                            })
+                            it('Should do something', () => {
+                                // Seed test data
+                                // Perform interactions
+                                // Assert behavior
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+            </section>
+            
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Umbraco</div>
+                        <div class="alt">Commands</div>
+                    </h1>
+                </section>
+
+                <section data-background-image="img/umbraco-cypress-helpers.png"></section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="bash" data-trim data-noescape>
+                        <span class="green">$</span> <span class="hljs-built_in">npm</span> install umbraco-cypress-testhelpers <span class="hljs-built_in">--D</span>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/commands/index.js</span>
+                    <pre><code class="javascript" data-trim data-noescape>
+                        import { Command as UmbracoCommands } ↴
+                            from 'umbraco-cypress-testhelpers';
+
+                        new UmbracoCommands().registerCypressCommands();
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="javascript" data-trim data-noescape>
+                        <div class="">// Navigate to Umbraco section
+                        cy.umbracoSection('settings')</div>
+                        <div class="fragment">// Expand tree items
+                        cy.umbracoTreeItem("settings", 
+                            ["Vendr", "Stores", "Test Store"])</div>
+                        <div class="fragment">// Success notification
+                        cy.umbracoSuccessNotification()</div>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre><code class="javascript" data-trim data-noescape>
+                        <div class="">// Authenticate requests
+                        cy.umbracoLogin(Cypress.env('username'), 
+                            Cypress.env('password'));</div>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="slide-in fade-out">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="5,6">
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                cy.task("app:seed", "clean");
+                                cy.task("app:clearCache");
+                                cy.umbracoLogin(Cypress.env('username'), 
+                                    Cypress.env('password'));
+                            })
+                            it('Should do something', () => {
+                                // Seed test data
+                                // Perform interactions
+                                // Assert behavior
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="fade-in fade-out">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="2-7">
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                cy.task("app:seed", "clean");
+                                cy.task("app:clearCache");
+                                cy.umbracoLogin(Cypress.env('username'), 
+                                    Cypress.env('password'));
+                            })
+                            it('Should do something', () => {
+                                // Seed test data
+                                // Perform interactions
+                                // Assert behavior
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" data-transition="fade-in slide-out">
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="8-12">
+                        context('Area of Test', () => {
+                            beforeEach(() => {
+                                cy.task("app:seed", "clean");
+                                cy.task("app:clearCache");
+                                cy.umbracoLogin(Cypress.env('username'), 
+                                    Cypress.env('password'));
+                            })
+                            it('Should do something', () => {
+                                <span class="white">// Seed test data</span>
+                                <span class="white">// Perform interactions</span>
+                                <span class="white">// Assert behavior</span>
+                            })				
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="3-9">
+                        ...
+                        it('can create a store', () => {
+                            // Go to section
+                            cy.umbracoSection('commerce');
+                            // Right click menu item
+                            cy.umbracoTreeItem('settings', 
+                                ["Vendr", "Stores"]).rightclick();
+                            // Click create content menu action
+                            cy.umbracoContextMenuAction("action-create").click();
+                        })
+                        ...
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="4-11">
+                        ...
+                        it('can create a store', () => {
+                            ...
+                            // Type the store name
+                            cy.get('[data-element="editor-name-field"]').type('Test Store');
+                            // Click the submit button
+                            cy.get('.btn-success').click();
+                            // Check default property values
+                            cy.get('.umb-property[label="Base Currency"]')
+                              .find('select > option[selected="selected"]')
+                              .should('have.text', 'GBP');
+                        })
+                        ...
+                    </code></pre>
+                </section>
+
+               
+
+            </section>
+            
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Creating custom</div>
+                        <div class="alt">Commands</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="5,9">
+                        ...
+                        it('can create a store', () => {
+                            ...
+                            // Type the store name
+                            cy.get('[data-element="editor-name-field"]').type('Test Store');
+                            // Click the submit button
+                            cy.get('.btn-success').click();
+                            // Check default property values
+                            cy.get('.umb-property[label="Base Currency"]')
+                              .find('select > option[selected="selected"]')
+                              .should('have.text', 'GBP');
+                        })
+                        ...
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/commands/index.js</span>
+                    <pre><code class="javascript" data-trim data-noescape>
+                        // Get Umbraco name field
+                        Cypress.Commands.add("umbracoEditorNameField", () => {
+                            cy.get('[data-element="editor-name-field"]');
+                        });
+                        <div class="fragment">// Get property editor wrapper
+                        Cypress.Commands.add("umbracoProperty", (label) => {
+                            cy.get(`.umb-property[label="${label}"]`);
+                        });</div>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="5,9">
+                        ...
+                        it('can create a store', () => {
+                            ...
+                            // Type the store name
+                            cy.get('[data-element="editor-name-field"]').type('Test Store');
+                            // Click the submit button
+                            cy.get('.btn-success').click();
+                            // Check default property values
+                            cy.get('.umb-property[label="Base Currency"]')
+                              .find('select > option[selected="selected"]')
+                              .should('have.text', 'GBP');
+                        })
+                        ...
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="5,9">
+                        ...
+                        it('can create a store', () => {
+                            ...
+                            // Type the store name
+                            cy.umbracoEditorNameField().type('Test Store');
+                            // Click the submit button
+                            cy.get('.btn-success').click();
+                            // Check default property values
+                            cy.umbracoProperty('Base Currency')
+                              .find('select > option[selected="selected"]')
+                              .should('have.text', 'GBP');
+                        })
+                        ...
+                    </code></pre>
+                </section>
+
+            </section>
+            
+            <section data-background-color="#162332">
+
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Taking</div>
+                        <div class="alt">Shortcuts</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#04c38d">
+                    <h1 class="bigtext">
+                        <div class="blue">Skip your UI</div>
+                        <div class="alt">as much as possible</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre><code class="javascript" data-trim data-noescape data-line-numbers="1-100">
+                        it('can delete a store', () => {
+                            // What would you do?
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <h1 class="bigtext">
+                        <div class="fragment strike-out">Rely on previous tests</div>
+                        <div class="fragment strike-out alt">Repeat previous test steps</div>
+                        <div class="fragment">Seed data via the API</div>
+                    </h1>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/integration/my-test.spec.js</span>
+                    <pre style="font-size: 0.9em;"><code class="javascript" data-trim data-noescape data-line-numbers="2-8">
+                        it('can delete a store', () => {
+                            // Seed test data
+                            cy.fixture('test-store').then(data => {
+                                cy.umbracoApiRequest("/.../vendr/Store/SaveStore", 
+                                    "POST", data).then(store => {
+                                    // Perform interactions + assertions
+                                });
+                            });
+                        })
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332" >
+                    <span class="filename">~/cypress/fixtures/test-store.json</span>
+                    <pre style="font-size: 0.9em;"><code class="json" data-trim data-noescape>
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "icon": "icon-store",
+                            "alias": "testStore",
+                            "name": "Test Store",
+                            "defaultCountryId": null,
+                            "defaultTaxClassId": null,
+                            "defaultOrderStatusId": null,
+                            "errorOrderStatusId": null,
+                            "pricesIncludeTax": false,
+                            ...
+                        }
+                    </code></pre>
+                </section>
+
+            </section>
+
+            <section data-background-color="#162332">
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Piecing it all</div>
+                        <div class="alt">Together</div>
+                    </h1>
+                </section>
+                <section data-background-color="#04c38d">
+                    <h1 class="bigtext">
+                        <div class="blue">About Time</div>
+                        <div class="alt">For a Demo</div>
+                    </h1>
+                </section>
+            </section>
+
+            <section data-background-color="#162332">
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Summing</div>
+                        <div class="alt">it all up</div> 
+                    </h1>
+                </section>
+            </section>
+
+            <section >
+                <section data-background-color="#162332">
+                    <h1 class="bigtext">
+                        <div>Useful</div>
+                        <div class="alt">Resources</div> 
+                    </h1>
+                </section>
+
+                <section data-background-image="img/cypress_io_website.png"></section>
+
+                <section data-background-image="img/umbraco_acceptancetests.png"></section>
+
+                <section data-background-image="img/umbraco-cypress-helpers.png"></section>
+
+                <section data-background-image="img/vendr_e2e_github.png"></section>
+
+            </section>
+
+            <section>
+
+                <section data-background-color="#162332" data-background-image="img/bg-science.png">
+                    <div class="inner trim">
+                        <h1 class="bigtext">
+                            <div>Thank you</div>
+                        </h1>
+                        <p>By Matt Brailsford / @mattbrailsford</p>
+                    </div>
+                </section>
+
+            </section>
+
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bigtext.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+
+        var doBigText = function (cs) {
+            var $cs = $(cs);
+            $cs.find(".bigtext").bigtext();
+            Reveal.layout();
+        }
+
+        var doOnChange = function (cs) {
+            doBigText(cs);
+        }
+
+        Reveal.addEventListener('ready', function (event) {
+            doOnChange(event.currentSlide);
+        });
+
+        Reveal.addEventListener('slidechanged', function (event) {
+            doOnChange(event.currentSlide);
+        });
+
+    </script>
+</body>
+
+</html>
