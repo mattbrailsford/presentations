@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>End-to-End Testing in Umbraco with Cypress</title>
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
@@ -227,6 +227,20 @@
                         <div>Writing your first</div>
                         <div class="alt">Test</div>
                     </h1>
+                </section>
+
+                <section data-background-color="#162332">
+                    <pre style="font-size: 1em;"><code class="bash" data-trim data-noescape data-line-numbers="5">
+                        my-project
+                        ├── cypress
+                        │   ├── fixtures
+                        │   ├── integration
+                        │   │   └── <span class="green">my-first-test.spec.js</span>
+                        │   ├── plugins
+                        │   ├── sandbox
+                        │   └── support
+                        └── <span class="green">...</span>
+                    </code></pre>
                 </section>
 
                 <section data-background-color="#162332">
