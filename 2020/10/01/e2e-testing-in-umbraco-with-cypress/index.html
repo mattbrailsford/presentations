@@ -598,8 +598,24 @@
                     </code></pre>
                 </section>
 
+
                 <section data-background-color="#162332">
-                    <span class="filename">~/cypress/commands/index.js</span>
+                    <pre style="font-size: 1em;"><code class="bash" data-trim data-noescape data-line-numbers="8">
+                        my-project
+                        ├── cypress
+                        │   ├── fixtures
+                        │   ├── integration
+                        │   ├── plugins
+                        │   ├── sandbox
+                        │   └── support
+                        │       ├── <span class="green">commands.js</span>
+                        │       └── <span class="green">index.js</span>
+                        └── <span class="green">...</span>
+                    </code></pre>
+                </section>
+
+                <section data-background-color="#162332">
+                    <span class="filename">~/cypress/support/commands.js</span>
                     <pre><code class="javascript" data-trim data-noescape>
                         import { Command as UmbracoCommands } ↴
                             from 'umbraco-cypress-testhelpers';
@@ -754,7 +770,7 @@
                 </section>
 
                 <section data-background-color="#162332">
-                    <span class="filename">~/cypress/commands/index.js</span>
+                    <span class="filename">~/cypress/support/commands.js</span>
                     <pre><code class="javascript" data-trim data-noescape>
                         // Get Umbraco name field
                         Cypress.Commands.add("umbracoEditorNameField", () => {
